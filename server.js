@@ -41,6 +41,16 @@ app.use(
     crossOriginEmbedderPolicy: false,
   })
 );
+// Canonical host: send nak.com.vn / www variants to SITE_URL (other hosts, e.g. Hostinger temp domain, are untouched)
+if (isProd) {
+  const canonicalHost = new URL(cfg.siteUrl).host;
+  app.use((req, res, next) => {
+    if (/^(www\.)?nak\.com\.vn$/.test(req.hostname) && (req.hostname !== canonicalHost || req.protocol !== 'https')) {
+      return res.redirect(301, cfg.siteUrl + req.originalUrl);
+    }
+    next();
+  });
+}
 app.use(compression());
 app.use(express.json({ limit: '20kb' }));
 app.use(
