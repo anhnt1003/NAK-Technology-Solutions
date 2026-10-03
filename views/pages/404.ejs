@@ -1,0 +1,12 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<section class="page-hero center-404">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <p class="big-404 grad">404</p>
+    <h1><%= t.notFound.title %></h1>
+    <p class="lead"><%= t.notFound.text %></p>
+    <a class="btn btn-primary btn-lg" href="/<%= lang %>"><%= t.notFound.btn %></a>
+  </div>
+</section>
+<%- include('../partials/footer') %>

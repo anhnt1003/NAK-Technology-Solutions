@@ -1,0 +1,24 @@
+<header class="site-header" id="header">
+  <div class="container nav-bar">
+    <a class="brand" href="/<%= lang %>" aria-label="<%= cfg.name %>">
+      <img src="/img/logo.svg" width="38" height="38" alt="">
+      <span class="brand-text"><strong>NAK</strong><small>Technology Solutions</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="/<%= lang %>" <%- page === 'home' ? 'aria-current="page"' : '' %>><%= t.nav.home %></a>
+      <a href="/<%= lang %>/services" <%- page === 'services' ? 'aria-current="page"' : '' %>><%= t.nav.services %></a>
+      <a href="/<%= lang %>/about" <%- page === 'about' ? 'aria-current="page"' : '' %>><%= t.nav.about %></a>
+      <a href="/<%= lang %>/contact" <%- page === 'contact' ? 'aria-current="page"' : '' %>><%= t.nav.contact %></a>
+      <a class="btn btn-primary nav-cta" href="/<%= lang %>/contact"><%= t.nav.cta %></a>
+    </nav>
+    <div class="nav-tools">
+      <a class="lang-switch" href="/<%= altLang %><%= slug ? '/' + slug : '' %>" hreflang="<%= altLang %>" lang="<%= altLang %>" aria-label="<%= altLang === 'en' ? 'Switch to English' : 'Chuyển sang tiếng Việt' %>">
+        <%- icon('globe', 18) %><span><%= altLang.toUpperCase() %></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="<%= t.nav.menu %>" data-open="<%= t.nav.menu %>" data-close="<%= t.nav.close %>">
+        <span class="i-open"><%- icon('menu', 24) %></span><span class="i-close"><%- icon('close', 24) %></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">

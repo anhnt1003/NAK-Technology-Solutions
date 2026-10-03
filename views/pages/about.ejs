@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.about.eyebrow %></p>
+    <h1 class="hero-in"><%= t.about.title %></h1>
+    <p class="lead hero-in"><%= t.about.lead %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-text reveal">
+      <% t.about.story.forEach(function (p) { %><p class="sub"><%= p %></p><% }) %>
+    </div>
+    <div class="mv reveal" style="--d:100ms">
+      <div class="panel"><h3><%= t.about.mission.title %></h3><p><%= t.about.mission.text %></p></div>
+      <div class="panel"><h3><%= t.about.vision.title %></h3><p><%= t.about.vision.text %></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.about.valuesHead %></h2></div>
+    <div class="card-grid four">
+      <% t.about.values.forEach(function (v, i) { %>
+      <div class="card reveal" style="--d:<%= i * 80 %>ms">
+        <div class="card-icon sm"><%- icon(v.icon, 24) %></div>
+        <h3><%= v.title %></h3>
+        <p><%= v.text %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.about.ctaTitle, ctaText: '', ctaBtn: t.about.ctaBtn }) %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,102 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="hero">
+  <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.home.hero.eyebrow %></p>
+    <h1 class="hero-in"><%= t.home.hero.title1 %><br><span class="grad"><%= t.home.hero.title2 %></span></h1>
+    <p class="lead hero-in"><%= t.home.hero.sub %></p>
+    <div class="hero-actions hero-in">
+      <a class="btn btn-primary btn-lg" href="/<%= lang %>/contact"><%= t.home.hero.cta1 %> <%- icon('arrow', 20) %></a>
+      <a class="btn btn-ghost btn-lg" href="/<%= lang %>/services"><%= t.home.hero.cta2 %></a>
+    </div>
+    <ul class="hero-badges hero-in">
+      <% t.home.hero.badges.forEach(function (b) { %><li><%- icon('check', 16) %><%= b %></li><% }) %>
+    </ul>
+  </div>
+</section>
+
+<section class="marquee-section" aria-label="<%= t.home.stackTitle %>">
+  <p class="marquee-title"><%= t.home.stackTitle %></p>
+  <div class="marquee">
+    <ul class="marquee-track">
+      <% t.tech.concat(t.tech).forEach(function (n, i) { %><li<%- i >= t.tech.length ? ' aria-hidden="true"' : '' %>><%= n %></li><% }) %>
+    </ul>
+  </div>
+</section>
+
+<section class="section stats">
+  <div class="container stats-grid">
+    <% t.home.stats.forEach(function (s) { %>
+    <div class="stat reveal">
+      <div class="stat-value"><span class="count" data-to="<%= s.value %>" data-decimals="<%= String(s.value).includes('.') ? 1 : 0 %>">0</span><span class="suffix"><%= s.suffix %></span></div>
+      <div class="stat-label"><%= s.label %></div>
+    </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><%= t.home.servicesHead.eyebrow %></p>
+      <h2><%= t.home.servicesHead.title %></h2>
+      <p class="sub"><%= t.home.servicesHead.sub %></p>
+    </div>
+    <div class="card-grid">
+      <% t.services.forEach(function (s, i) { %>
+      <article class="card tilt reveal" style="--d:<%= i * 90 %>ms">
+        <div class="card-icon"><%- icon(s.icon, 28) %></div>
+        <h3><%= s.title %></h3>
+        <p><%= s.short %></p>
+        <a class="link-arrow" href="/<%= lang %>/services#<%= s.id %>"><%= t.home.learnMore %> <%- icon('arrow', 18) %></a>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><%= t.home.processHead.eyebrow %></p>
+      <h2><%= t.home.processHead.title %></h2>
+      <p class="sub"><%= t.home.processHead.sub %></p>
+    </div>
+    <ol class="steps">
+      <% t.home.process.forEach(function (p, i) { %>
+      <li class="step reveal" style="--d:<%= i * 90 %>ms">
+        <span class="step-num"><%= String(i + 1).padStart(2, '0') %></span>
+        <div class="card-icon sm"><%- icon(p.icon, 24) %></div>
+        <h3><%= p.title %></h3>
+        <p><%= p.text %></p>
+      </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><%= t.home.whyHead.eyebrow %></p>
+      <h2><%= t.home.whyHead.title %></h2>
+    </div>
+    <div class="bento">
+      <% t.home.why.forEach(function (w, i) { %>
+      <div class="bento-item b<%= i + 1 %> reveal" style="--d:<%= i * 80 %>ms">
+        <div class="card-icon sm"><%- icon(w.icon, 24) %></div>
+        <h3><%= w.title %></h3>
+        <p><%= w.text %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.home.cta.title, ctaText: t.home.cta.text, ctaBtn: t.home.cta.btn }) %>
+
+<%- include('../partials/footer') %>

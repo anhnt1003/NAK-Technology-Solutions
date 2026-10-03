@@ -1,0 +1,41 @@
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/<%= lang %>" aria-label="<%= cfg.name %>">
+        <img src="/img/logo.svg" width="38" height="38" alt="">
+        <span class="brand-text"><strong>NAK</strong><small>Technology Solutions</small></span>
+      </a>
+      <p><%= t.footer.about %></p>
+    </div>
+    <div>
+      <h3><%= t.footer.explore %></h3>
+      <ul>
+        <li><a href="/<%= lang %>"><%= t.nav.home %></a></li>
+        <li><a href="/<%= lang %>/services"><%= t.nav.services %></a></li>
+        <li><a href="/<%= lang %>/about"><%= t.nav.about %></a></li>
+        <li><a href="/<%= lang %>/contact"><%= t.nav.contact %></a></li>
+      </ul>
+    </div>
+    <div>
+      <h3><%= t.footer.services %></h3>
+      <ul>
+        <% t.services.forEach(function (s) { %><li><a href="/<%= lang %>/services#<%= s.id %>"><%= s.title %></a></li><% }) %>
+      </ul>
+    </div>
+    <div>
+      <h3><%= t.footer.contact %></h3>
+      <ul class="footer-contact">
+        <li><%- icon('mail', 18) %><a href="mailto:<%= cfg.email %>"><%= cfg.email %></a></li>
+        <li><%- icon('phone', 18) %><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></li>
+        <li><%- icon('pin', 18) %><span><%= cfg.address[lang] %></span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <%= new Date().getFullYear() %> <%= cfg.name %>. <%= t.footer.rights %></span>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

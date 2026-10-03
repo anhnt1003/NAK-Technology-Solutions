@@ -1,0 +1,70 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.contact.eyebrow %></p>
+    <h1 class="hero-in"><%= t.contact.title %></h1>
+    <p class="lead hero-in"><%= t.contact.sub %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <aside class="contact-info reveal">
+      <ul>
+        <li><span class="ci"><%- icon('mail', 22) %></span><div><small><%= t.contact.info.email %></small><a href="mailto:<%= cfg.email %>"><%= cfg.email %></a></div></li>
+        <li><span class="ci"><%- icon('phone', 22) %></span><div><small><%= t.contact.info.phone %></small><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></div></li>
+        <li><span class="ci"><%- icon('pin', 22) %></span><div><small><%= t.contact.info.address %></small><span><%= cfg.address[lang] %></span></div></li>
+        <li><span class="ci"><%- icon('headset', 22) %></span><div><small><%= t.contact.info.hours %></small><span><%= t.contact.info.hoursValue %></span></div></li>
+      </ul>
+    </aside>
+
+    <form class="form reveal" id="contactForm" novalidate style="--d:100ms"
+      data-ok="<%= t.contact.form.ok %>" data-fail="<%= t.contact.form.fail %>" data-sending="<%= t.contact.form.sending %>"
+      data-err-name="<%= t.contact.form.errName %>" data-err-email="<%= t.contact.form.errEmail %>" data-err-message="<%= t.contact.form.errMessage %>">
+      <div class="row">
+        <div class="field">
+          <label for="name"><%= t.contact.form.name %> *</label>
+          <input id="name" name="name" type="text" autocomplete="name" required maxlength="120">
+          <span class="err" data-for="name" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="email"><%= t.contact.form.email %> *</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="160">
+          <span class="err" data-for="email" role="alert"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="phone"><%= t.contact.form.phone %> <small><%= t.contact.form.optional %></small></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        </div>
+        <div class="field">
+          <label for="company"><%= t.contact.form.company %> <small><%= t.contact.form.optional %></small></label>
+          <input id="company" name="company" type="text" autocomplete="organization" maxlength="160">
+        </div>
+      </div>
+      <div class="field">
+        <label for="service"><%= t.contact.form.service %></label>
+        <select id="service" name="service">
+          <option value=""><%= t.contact.form.select %></option>
+          <% t.services.forEach(function (s) { %><option value="<%= s.title %>"><%= s.title %></option><% }) %>
+          <option value="<%= t.contact.form.other %>"><%= t.contact.form.other %></option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message"><%= t.contact.form.message %> *</label>
+        <textarea id="message" name="message" rows="5" required maxlength="4000"></textarea>
+        <span class="err" data-for="message" role="alert"></span>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-primary btn-lg" type="submit"><span class="btn-label"><%= t.contact.form.send %></span> <%- icon('arrow', 20) %></button>
+      <p class="form-note"><%= t.contact.form.privacy %></p>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

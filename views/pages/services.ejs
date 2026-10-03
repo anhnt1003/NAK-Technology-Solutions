@@ -1,0 +1,34 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.servicesPage.eyebrow %></p>
+    <h1 class="hero-in"><%= t.servicesPage.title %></h1>
+    <p class="lead hero-in"><%= t.servicesPage.sub %></p>
+  </div>
+</section>
+
+<% t.services.forEach(function (s, i) { %>
+<section class="section service-block <%= i % 2 ? 'section-alt' : '' %>" id="<%= s.id %>">
+  <div class="container split <%= i % 2 ? 'flip' : '' %>">
+    <div class="split-text reveal">
+      <div class="card-icon"><%- icon(s.icon, 28) %></div>
+      <h2><%= s.title %></h2>
+      <p class="sub"><%= s.long %></p>
+      <a class="btn btn-ghost" href="/<%= lang %>/contact"><%= t.nav.cta %> <%- icon('arrow', 18) %></a>
+    </div>
+    <div class="panel reveal" style="--d:100ms">
+      <h3><%= t.servicesPage.includes %></h3>
+      <ul class="checklist">
+        <% s.items.forEach(function (it) { %><li><%- icon('check', 18) %><span><%= it %></span></li><% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+<% }) %>
+
+<%- include('../partials/cta', { ctaTitle: t.servicesPage.ctaTitle, ctaText: t.servicesPage.ctaText, ctaBtn: t.servicesPage.ctaBtn }) %>
+
+<%- include('../partials/footer') %>
