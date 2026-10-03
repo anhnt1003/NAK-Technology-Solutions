@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 
 const cfg = require('./src/config');
 const { icon } = require('./src/icons');
+const data = require('./src/data');
 const dict = { vi: require('./src/i18n/vi'), en: require('./src/i18n/en') };
 
 const app = express();
@@ -50,6 +51,7 @@ app.use(
 app.use((req, res, next) => {
   res.locals.cfg = cfg;
   res.locals.icon = icon;
+  res.locals.data = data;
   next();
 });
 
@@ -78,7 +80,8 @@ app.get('/', (req, res) => {
 
 const L = '/:lang(vi|en)';
 app.get(L, render('home'));
-app.get(`${L}/services`, render('services'));
+app.get(`${L}/solutions`, render('solutions'));
+app.get(`${L}/projects`, render('projects'));
 app.get(`${L}/about`, render('about'));
 app.get(`${L}/contact`, render('contact'));
 

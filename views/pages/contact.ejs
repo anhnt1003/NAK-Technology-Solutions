@@ -15,9 +15,9 @@
     <aside class="contact-info reveal">
       <ul>
         <li><span class="ci"><%- icon('mail', 22) %></span><div><small><%= t.contact.info.email %></small><a href="mailto:<%= cfg.email %>"><%= cfg.email %></a></div></li>
-        <li><span class="ci"><%- icon('phone', 22) %></span><div><small><%= t.contact.info.phone %></small><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></div></li>
+        <% if (cfg.phone) { %><li><span class="ci"><%- icon('phone', 22) %></span><div><small><%= t.contact.info.phone %></small><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></div></li><% } %>
         <li><span class="ci"><%- icon('pin', 22) %></span><div><small><%= t.contact.info.address %></small><span><%= cfg.address[lang] %></span></div></li>
-        <li><span class="ci"><%- icon('headset', 22) %></span><div><small><%= t.contact.info.hours %></small><span><%= t.contact.info.hoursValue %></span></div></li>
+        <li><span class="ci"><%- icon('globe', 22) %></span><div><small><%= t.contact.info.web %></small><a href="https://<%= cfg.domain %>"><%= cfg.domain %></a></div></li>
       </ul>
     </aside>
 
@@ -50,7 +50,7 @@
         <label for="service"><%= t.contact.form.service %></label>
         <select id="service" name="service">
           <option value=""><%= t.contact.form.select %></option>
-          <% t.services.forEach(function (s) { %><option value="<%= s.title %>"><%= s.title %></option><% }) %>
+          <% t.solutions.forEach(function (s) { %><option value="<%= s.title %>"><%= s.title %></option><% }) %>
           <option value="<%= t.contact.form.other %>"><%= t.contact.form.other %></option>
         </select>
       </div>

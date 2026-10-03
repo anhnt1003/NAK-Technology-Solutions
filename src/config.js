@@ -4,13 +4,16 @@ module.exports = {
   name: 'NAK Technology Solutions Co., LTD',
   short: 'NAK Technology',
   siteUrl: (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, ''),
-  email: process.env.COMPANY_EMAIL || 'info@your-domain.com',
-  phone: process.env.COMPANY_PHONE || '+84 000 000 000',
+  domain: 'www.nak.com.vn',
+  email: process.env.COMPANY_EMAIL || 'support@nak.com.vn',
+  // Leave empty to hide the phone number everywhere until a real number is provided.
+  phone: process.env.COMPANY_PHONE || '',
+  founded: 2014,
   address: {
-    vi: process.env.COMPANY_ADDRESS_VI || 'Địa chỉ công ty, Thành phố, Việt Nam',
-    en: process.env.COMPANY_ADDRESS_EN || 'Company address, City, Vietnam',
+    vi: 'L17-11, Vincom Center, 72 Lê Thánh Tôn, P. Sài Gòn, TP. Hồ Chí Minh',
+    en: 'L17-11, Vincom Center, 72 Le Thanh Ton St, Saigon Ward, Ho Chi Minh City',
   },
   langs: ['vi', 'en'],
   defaultLang: 'vi',
-  pages: ['', 'services', 'about', 'contact'],
+  pages: ['', 'solutions', 'projects', 'about', 'contact'],
 };

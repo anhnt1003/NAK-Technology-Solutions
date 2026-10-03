@@ -1,0 +1,5 @@
+<ul class="logo-wall <%= typeof cls !== 'undefined' ? cls : '' %>">
+  <% items.forEach(function (it) { %>
+  <li><img src="/img/partners/<%= it[1] %>.png" alt="<%= it[0] %>" loading="lazy"></li>
+  <% }) %>
+</ul>

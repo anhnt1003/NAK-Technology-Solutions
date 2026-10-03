@@ -1,12 +1,12 @@
 <header class="site-header" id="header">
   <div class="container nav-bar">
     <a class="brand" href="/<%= lang %>" aria-label="<%= cfg.name %>">
-      <img src="/img/logo.svg" width="38" height="38" alt="">
-      <span class="brand-text"><strong>NAK</strong><small>Technology Solutions</small></span>
+      <img src="/img/logo.webp" width="96" height="41" alt="NAK Technology Solutions">
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="/<%= lang %>" <%- page === 'home' ? 'aria-current="page"' : '' %>><%= t.nav.home %></a>
-      <a href="/<%= lang %>/services" <%- page === 'services' ? 'aria-current="page"' : '' %>><%= t.nav.services %></a>
+      <a href="/<%= lang %>/solutions" <%- page === 'solutions' ? 'aria-current="page"' : '' %>><%= t.nav.solutions %></a>
+      <a href="/<%= lang %>/projects" <%- page === 'projects' ? 'aria-current="page"' : '' %>><%= t.nav.projects %></a>
       <a href="/<%= lang %>/about" <%- page === 'about' ? 'aria-current="page"' : '' %>><%= t.nav.about %></a>
       <a href="/<%= lang %>/contact" <%- page === 'contact' ? 'aria-current="page"' : '' %>><%= t.nav.contact %></a>
       <a class="btn btn-primary nav-cta" href="/<%= lang %>/contact"><%= t.nav.cta %></a>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= meta.title %></title>
   <meta name="description" content="<%= meta.desc %>">
-  <meta name="theme-color" content="#060912">
+  <meta name="theme-color" content="#0b0d10">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="<%= canonical %>">
   <% cfg.langs.forEach(function (l) { %>
@@ -17,17 +17,18 @@
   <meta property="og:title" content="<%= meta.title %>">
   <meta property="og:description" content="<%= meta.desc %>">
   <meta property="og:url" content="<%= canonical %>">
-  <meta property="og:image" content="<%= cfg.siteUrl %>/img/og.svg">
+  <meta property="og:image" content="<%= cfg.siteUrl %>/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
   <script type="application/ld+json"><%- JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Organization',
-    name: cfg.name, url: cfg.siteUrl, logo: cfg.siteUrl + '/img/logo.svg',
-    email: cfg.email, telephone: cfg.phone
+    name: cfg.name, url: cfg.siteUrl, logo: cfg.siteUrl + '/img/logo.webp',
+    email: cfg.email, foundingDate: String(cfg.founded)
   }) %></script>
 </head>
 <body class="page-<%= page %>">

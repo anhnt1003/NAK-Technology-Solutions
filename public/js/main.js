@@ -86,11 +86,11 @@
         if (p.y < 0 || p.y > h) p.vy *= -1;
         var dm = Math.hypot(p.x - mouse.x, p.y - mouse.y);
         if (dm < 120) { p.x += (p.x - mouse.x) * 0.012; p.y += (p.y - mouse.y) * 0.012; }
-        ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, 6.283); ctx.fillStyle = 'rgba(34,211,238,0.75)'; ctx.fill();
+        ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, 6.283); ctx.fillStyle = 'rgba(255,122,61,0.8)'; ctx.fill();
         for (var j = i + 1; j < pts.length; j++) {
           var q = pts[j], d = Math.hypot(p.x - q.x, p.y - q.y);
           if (d < maxD) {
-            ctx.strokeStyle = 'rgba(120,140,255,' + (0.22 * (1 - d / maxD)).toFixed(3) + ')';
+            ctx.strokeStyle = 'rgba(255,160,110,' + (0.22 * (1 - d / maxD)).toFixed(3) + ')';
             ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
           }
         }

@@ -1,7 +1,7 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<section class="page-hero">
+<section class="page-hero photo-hero" style="--photo:url(/img/photos/building.jpg)">
   <div class="orb orb-b" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow hero-in"><span class="dot"></span><%= t.about.eyebrow %></p>
@@ -13,30 +13,55 @@
 <section class="section">
   <div class="container split">
     <div class="split-text reveal">
-      <% t.about.story.forEach(function (p) { %><p class="sub"><%= p %></p><% }) %>
+      <p class="sub"><%= t.about.story %></p>
+      <div class="facts">
+        <% t.about.facts.forEach(function (f) { %><div><strong class="grad"><%= f.value %></strong><span><%= f.label %></span></div><% }) %>
+      </div>
     </div>
-    <div class="mv reveal" style="--d:100ms">
-      <div class="panel"><h3><%= t.about.mission.title %></h3><p><%= t.about.mission.text %></p></div>
-      <div class="panel"><h3><%= t.about.vision.title %></h3><p><%= t.about.vision.text %></p></div>
-    </div>
+    <figure class="photo-card reveal" style="--d:100ms"><img src="/img/photos/glass.jpg" alt="" loading="lazy" width="800" height="600"></figure>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
-    <div class="section-head reveal"><h2><%= t.about.valuesHead %></h2></div>
+    <blockquote class="mission reveal">
+      <p class="eyebrow"><%= t.about.missionLabel %></p>
+      <p class="mission-text"><%= t.about.mission %></p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.about.deliveryHead %></h2></div>
+    <ol class="steps six">
+      <% t.delivery.forEach(function (p, i) { %>
+      <li class="step reveal" style="--d:<%= i * 70 %>ms">
+        <span class="step-num"><%= String(i + 1).padStart(2, '0') %></span>
+        <div class="card-icon sm"><%- icon(p.icon, 24) %></div>
+        <h3><%= p.title %></h3>
+        <p><%= p.text %></p>
+      </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.about.whyHead %></h2></div>
     <div class="card-grid four">
-      <% t.about.values.forEach(function (v, i) { %>
+      <% t.why.forEach(function (w, i) { %>
       <div class="card reveal" style="--d:<%= i * 80 %>ms">
-        <div class="card-icon sm"><%- icon(v.icon, 24) %></div>
-        <h3><%= v.title %></h3>
-        <p><%= v.text %></p>
+        <div class="card-icon sm"><%- icon(w.icon, 24) %></div>
+        <h3><%= w.title %></h3>
+        <p><%= w.text %></p>
       </div>
       <% }) %>
     </div>
   </div>
 </section>
 
-<%- include('../partials/cta', { ctaTitle: t.about.ctaTitle, ctaText: '', ctaBtn: t.about.ctaBtn }) %>
+<%- include('../partials/cta', { ctaTitle: t.about.ctaTitle, ctaText: t.about.ctaText, ctaBtn: t.about.ctaBtn }) %>
 
 <%- include('../partials/footer') %>

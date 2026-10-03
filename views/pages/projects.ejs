@@ -1,0 +1,46 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero photo-hero" style="--photo:url(/img/photos/skyline.jpg)">
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.projectsPage.eyebrow %></p>
+    <h1 class="hero-in"><%= t.projectsPage.title %></h1>
+    <p class="lead hero-in"><%= t.projectsPage.sub %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow"><%= t.home.projectsHead.eyebrow %></p><h2><%= t.home.projectsHead.title %></h2></div>
+    <div class="card-grid">
+      <% t.projects.forEach(function (p, i) { %>
+      <article class="project reveal" style="--d:<%= i * 90 %>ms">
+        <div class="project-photo" style="background-image:url(/img/photos/<%= data.projectMedia[i].photo %>.jpg)"></div>
+        <div class="project-body">
+          <span class="tag"><%= p.tag %></span>
+          <h3><%= p.title %></h3>
+          <p><%= p.text %></p>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal center"><h2><%= t.projectsPage.clientsHead %></h2></div>
+    <%- include('../partials/logowall', { items: data.clients, cls: '' }) %>
+    <h3 class="mini center-text"><%= t.home.industriesHead.title %></h3>
+    <ul class="industries">
+      <% t.industries.forEach(function (ind, i) { %>
+      <li class="industry reveal" style="--d:<%= i * 70 %>ms"><span class="card-icon sm"><%- icon(data.industryIcons[i], 24) %></span><span><%= ind.title %></span></li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.projectsPage.ctaTitle, ctaText: t.projectsPage.ctaText, ctaBtn: t.projectsPage.ctaBtn }) %>
+
+<%- include('../partials/footer') %>

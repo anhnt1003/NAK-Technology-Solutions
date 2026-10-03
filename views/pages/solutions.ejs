@@ -1,0 +1,46 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero photo-hero" style="--photo:url(/img/photos/network.jpg)">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.solutionsPage.eyebrow %></p>
+    <h1 class="hero-in"><%= t.solutionsPage.title %></h1>
+    <p class="lead hero-in"><%= t.solutionsPage.sub %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container sol-grid">
+    <% t.solutions.forEach(function (s, i) { %>
+    <article class="sol reveal" id="<%= s.id %>" style="--d:<%= (i % 2) * 80 %>ms">
+      <div class="sol-head">
+        <div class="card-icon"><%- icon(data.solutionIcons[i], 28) %></div>
+        <div>
+          <span class="sol-num"><%= String(i + 1).padStart(2, '0') %></span>
+          <h2><%= s.title %></h2>
+        </div>
+      </div>
+      <p class="sub"><%= s.short %></p>
+      <h3 class="mini"><%= t.solutionsPage.includes %></h3>
+      <ul class="checklist">
+        <% s.items.forEach(function (it) { %><li><%- icon('check', 18) %><span><%= it %></span></li><% }) %>
+      </ul>
+    </article>
+    <% }) %>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal center">
+      <h2><%= t.solutionsPage.vendorsHead %></h2>
+      <p class="sub"><%= t.solutionsPage.vendorsSub %></p>
+    </div>
+    <%- include('../partials/logowall', { items: data.vendors, cls: '' }) %>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.solutionsPage.ctaTitle, ctaText: t.solutionsPage.ctaText, ctaBtn: t.solutionsPage.ctaBtn }) %>
+
+<%- include('../partials/footer') %>
