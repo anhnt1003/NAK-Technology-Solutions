@@ -24,10 +24,9 @@
   <line class="ha-spoke" style="--i:<%= i %>" x1="<%= cx %>" y1="<%= cy %>" x2="<%= p.x %>" y2="<%= p.y %>"/>
   <% }) %>
   <g class="ha-hub" transform="translate(<%= cx %> <%= cy %>)">
-    <circle r="62" class="ha-hub-bg"/>
-    <circle r="62" class="ha-hub-ring"/>
-    <path d="M-22 18V-18l44 36V-18" fill="none" stroke="url(#haG)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    <text y="46" text-anchor="middle" class="ha-hub-text">NAK</text>
+    <circle r="70" class="ha-hub-bg"/>
+    <circle r="70" class="ha-hub-ring"/>
+    <image href="/img/logo.png" x="-52" y="-21" width="104" height="42" preserveAspectRatio="xMidYMid meet" aria-label="NAK Technology Solutions"/>
   </g>
   <% pts.forEach(function (p, i) { %>
   <a href="/<%= lang %>/solutions/<%= p.id %>" aria-label="<%= p.lab %>">

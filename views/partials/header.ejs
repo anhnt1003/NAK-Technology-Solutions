@@ -9,8 +9,7 @@
       <a href="/<%= lang %>/projects" <%- page === 'projects' ? 'aria-current="page"' : '' %>><%= t.nav.projects %></a>
       <a href="/<%= lang %>/insights" <%- page === 'insights' ? 'aria-current="page"' : '' %>><%= t.x.navInsights %></a>
       <a href="/<%= lang %>/about" <%- page === 'about' ? 'aria-current="page"' : '' %>><%= t.nav.about %></a>
-      <a href="/<%= lang %>/contact" <%- page === 'contact' ? 'aria-current="page"' : '' %>><%= t.nav.contact %></a>
-      <a class="btn btn-primary nav-cta" href="/<%= lang %>/contact"><%= t.nav.cta %></a>
+      <a class="btn btn-primary nav-cta" href="/<%= lang %>/contact" <%- page === 'contact' ? 'aria-current="page"' : '' %>><%= t.nav.cta %></a>
     </nav>
     <div class="nav-tools">
       <a class="lang-switch" href="/<%= altLang %><%= slug ? '/' + slug : '' %>" hreflang="<%= altLang %>" lang="<%= altLang %>" aria-label="<%= altLang === 'en' ? 'Switch to English' : 'Chuyển sang tiếng Việt' %>">
