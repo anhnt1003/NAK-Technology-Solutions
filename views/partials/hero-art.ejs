@@ -1,0 +1,43 @@
+<%
+  var nodes = [['server', 'server'], ['storage', 'database'], ['network', 'network'], ['security', 'shield'], ['aws', 'cloud'], ['client', 'monitor']];
+  var labelKeys = ['server', 'storage', 'network', 'security', 'cloud', 'client'];
+  var cx = 280, cy = 255, rx = 205, ry = 180;
+  var pts = nodes.map(function (n, i) {
+    var a = (-90 + i * 60) * Math.PI / 180;
+    return { id: n[0], ic: n[1], lab: t.x.heroLabels[labelKeys[i]], x: Math.round(cx + rx * Math.cos(a)), y: Math.round(cy + ry * Math.sin(a)) };
+  });
+%>
+<svg class="hero-art" viewBox="0 0 560 520" role="group" aria-label="<%= t.x.heroCaption %>">
+  <defs>
+    <linearGradient id="haG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9a5c"/><stop offset="1" stop-color="#e35d28"/>
+    </linearGradient>
+    <radialGradient id="haGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff7a3d" stop-opacity=".35"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="<%= cx %>" cy="<%= cy %>" r="230" fill="url(#haGlow)"/>
+  <ellipse class="ha-ring" cx="<%= cx %>" cy="<%= cy %>" rx="<%= rx + 38 %>" ry="<%= ry + 34 %>"/>
+  <ellipse class="ha-ring ha-ring-2" cx="<%= cx %>" cy="<%= cy %>" rx="<%= rx - 70 %>" ry="<%= ry - 62 %>"/>
+  <polygon class="ha-poly" points="<%= pts.map(function (p) { return p.x + ',' + p.y; }).join(' ') %>"/>
+  <% pts.forEach(function (p, i) { %>
+  <line class="ha-spoke" style="--i:<%= i %>" x1="<%= cx %>" y1="<%= cy %>" x2="<%= p.x %>" y2="<%= p.y %>"/>
+  <% }) %>
+  <g class="ha-hub" transform="translate(<%= cx %> <%= cy %>)">
+    <circle r="62" class="ha-hub-bg"/>
+    <circle r="62" class="ha-hub-ring"/>
+    <path d="M-22 18V-18l44 36V-18" fill="none" stroke="url(#haG)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <text y="46" text-anchor="middle" class="ha-hub-text">NAK</text>
+  </g>
+  <% pts.forEach(function (p, i) { %>
+  <a href="/<%= lang %>/solutions/<%= p.id %>" aria-label="<%= p.lab %>">
+    <g class="ha-node" transform="translate(<%= p.x %> <%= p.y %>)">
+      <g class="ha-node-in" style="--i:<%= i %>">
+        <circle r="38" class="ha-node-bg"/>
+        <g transform="translate(-14 -14)" class="ha-node-icon"><%- icon(p.ic, 28) %></g>
+        <text y="62" text-anchor="middle" class="ha-node-label"><%= p.lab %></text>
+      </g>
+    </g>
+  </a>
+  <% }) %>
+</svg>

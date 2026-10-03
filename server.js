@@ -12,6 +12,13 @@ const dict = { vi: require('./src/i18n/vi'), en: require('./src/i18n/en') };
 const privacy = require('./src/privacy');
 dict.vi.privacy = privacy.vi;
 dict.en.privacy = privacy.en;
+const extra = require('./src/i18n/extra');
+dict.vi.x = extra.vi;
+dict.en.x = extra.en;
+const solutions = require('./src/content/solutions');
+const posts = require('./src/content/posts');
+const faq = require('./src/content/faq');
+const extras = require('./src/content/extras');
 
 const app = express();
 const isProd = process.env.NODE_ENV === 'production';
@@ -65,8 +72,14 @@ app.use((req, res, next) => {
   res.locals.cfg = cfg;
   res.locals.icon = icon;
   res.locals.data = data;
+  res.locals.content = { solutions, posts, faq, extras };
   next();
 });
+
+function pageOf(req, extraLocals) {
+  const lang = req.params.lang;
+  return { t: dict[lang], lang, altLang: lang === 'vi' ? 'en' : 'vi', ...extraLocals };
+}
 
 function render(page, metaKey) {
   return (req, res) => {
@@ -78,12 +91,14 @@ function render(page, metaKey) {
       lang,
       page,
       slug,
-      meta: t.meta[metaKey || page],
+      meta: t.meta[metaKey || page] || t.x.meta[metaKey || page],
       canonical: `${cfg.siteUrl}/${lang}${slug ? '/' + slug : ''}`,
       altLang: lang === 'vi' ? 'en' : 'vi',
     });
   };
 }
+
+function notFound(req, res, next) { next(); }
 
 // Root: pick language from Accept-Language
 app.get('/', (req, res) => {
@@ -98,6 +113,48 @@ app.get(`${L}/projects`, render('projects'));
 app.get(`${L}/about`, render('about'));
 app.get(`${L}/contact`, render('contact'));
 app.get(`${L}/privacy`, render('privacy', 'privacy'));
+app.get(`${L}/resources`, render('resources', 'resources'));
+app.get(`${L}/insights`, render('insights', 'insights'));
+
+app.get(`${L}/solutions/:id`, (req, res, next) => {
+  const idx = solutions.findIndex((x) => x.id === req.params.id);
+  if (idx < 0) return notFound(req, res, next);
+  const lang = req.params.lang;
+  const sol = solutions[idx];
+  const c = sol[lang];
+  const slug = `solutions/${sol.id}`;
+  res.render('pages/solution', {
+    ...pageOf(req), page: 'solutions', slug, sol, c, idx,
+    meta: { title: `${c.title} | NAK Technology Solutions`, desc: c.tagline + '. ' + c.intro.slice(0, 120) },
+    canonical: `${cfg.siteUrl}/${lang}/${slug}`,
+  });
+});
+
+app.get(`${L}/insights/:slug`, (req, res, next) => {
+  const post = posts.find((p) => p.slug === req.params.slug);
+  if (!post) return next();
+  const lang = req.params.lang;
+  const slug = `insights/${post.slug}`;
+  res.render('pages/post', {
+    ...pageOf(req), page: 'insights', slug, post, c: post[lang],
+    meta: { title: `${post[lang].title} | NAK Technology Solutions`, desc: post[lang].excerpt },
+    canonical: `${cfg.siteUrl}/${lang}/${slug}`,
+  });
+});
+
+app.get(`${L}/projects/:n`, (req, res, next) => {
+  const n = Number(req.params.n);
+  const detail = extras.projectDetails[n];
+  if (!Number.isInteger(n) || !detail) return next();
+  const lang = req.params.lang;
+  const slug = `projects/${n}`;
+  const p = dict[lang].projects[n];
+  res.render('pages/project', {
+    ...pageOf(req), page: 'projects', slug, n, p, d: detail[lang], media: data.projectMedia[n],
+    meta: { title: `${p.title} | NAK Technology Solutions`, desc: p.text },
+    canonical: `${cfg.siteUrl}/${lang}/${slug}`,
+  });
+});
 
 // Contact form
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 5, standardHeaders: true, legacyHeaders: false });
@@ -171,7 +228,13 @@ app.get('/robots.txt', (req, res) => {
 });
 app.get('/sitemap.xml', (req, res) => {
   const urls = [];
-  for (const slug of cfg.pages) {
+  const paths = [
+    ...cfg.pages,
+    ...solutions.map((x) => `solutions/${x.id}`),
+    ...posts.map((p) => `insights/${p.slug}`),
+    ...Object.keys(extras.projectDetails).map((n) => `projects/${n}`),
+  ];
+  for (const slug of paths) {
     for (const lang of cfg.langs) {
       const alts = cfg.langs
         .map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${cfg.siteUrl}/${l}${slug ? '/' + slug : ''}"/>`)

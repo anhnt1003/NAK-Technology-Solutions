@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero photo-hero" style="--photo:url(/img/photos/<%= post.photo %>.jpg)">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container narrow">
+    <nav class="crumbs hero-in" aria-label="Breadcrumb"><a href="/<%= lang %>/insights"><%= t.x.backInsights %></a></nav>
+    <h1 class="hero-in"><%= c.title %></h1>
+    <p class="lead hero-in"><%= c.excerpt %></p>
+    <p class="post-meta hero-in"><time datetime="<%= post.date %>"><%= post.date %></time> · <%= post.minutes %> <%= t.x.minRead %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="legal article">
+      <% c.body.forEach(function (b) { %>
+        <% if (b.h) { %><h2><%= b.h %></h2><% } %>
+        <% if (b.p) { %><p><%= b.p %></p><% } %>
+        <% if (b.ul) { %><ul><% b.ul.forEach(function (x) { %><li><%= x %></li><% }) %></ul><% } %>
+      <% }) %>
+      <% if (c.sources && c.sources.length) { %>
+      <h2><%= t.x.sourcesHead %></h2>
+      <ul><% c.sources.forEach(function (s) { %><li><a class="text-link" href="<%= s.u %>" target="_blank" rel="noopener noreferrer"><%= s.t %></a></li><% }) %></ul>
+      <% } %>
+      <div class="related">
+        <span><%= t.x.relatedSolution %></span>
+        <a class="chip" href="/<%= lang %>/solutions/<%= post.solution %>"><%- icon(content.solutions.find(function (s) { return s.id === post.solution; }).icon, 18) %><%= content.solutions.find(function (s) { return s.id === post.solution; })[lang].title %></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.x.ctaTitle, ctaText: t.x.ctaText, ctaBtn: t.x.ctaBtn }) %>
+
+<script type="application/ld+json"><%- JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'Article', headline: c.title, description: c.excerpt,
+  datePublished: post.date, author: { '@type': 'Organization', name: cfg.name }, publisher: { '@type': 'Organization', name: cfg.name }
+}).replace(/</g, '\\u003c') %></script>
+
+<%- include('../partials/footer') %>

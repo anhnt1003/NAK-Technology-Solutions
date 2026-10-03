@@ -12,20 +12,21 @@
 
 <section class="section">
   <div class="container sol-grid">
-    <% t.solutions.forEach(function (s, i) { %>
+    <% content.solutions.forEach(function (s, i) { var c = s[lang]; %>
     <article class="sol reveal" id="<%= s.id %>" style="--d:<%= (i % 2) * 80 %>ms">
       <div class="sol-head">
-        <div class="card-icon"><%- icon(data.solutionIcons[i], 28) %></div>
+        <div class="card-icon"><%- icon(s.icon, 28) %></div>
         <div>
           <span class="sol-num"><%= String(i + 1).padStart(2, '0') %></span>
-          <h2><%= s.title %></h2>
+          <h2><a href="/<%= lang %>/solutions/<%= s.id %>"><%= c.title %></a></h2>
         </div>
       </div>
-      <p class="sub"><%= s.short %></p>
+      <p class="sub"><%= c.tagline %></p>
       <h3 class="mini"><%= t.solutionsPage.includes %></h3>
       <ul class="checklist">
-        <% s.items.forEach(function (it) { %><li><%- icon('check', 18) %><span><%= it %></span></li><% }) %>
+        <% c.offerings.slice(0, 3).forEach(function (it) { %><li><%- icon('check', 18) %><span><%= it %></span></li><% }) %>
       </ul>
+      <a class="link-arrow" href="/<%= lang %>/solutions/<%= s.id %>"><%= t.x.readMore %> <%- icon('arrow', 18) %></a>
     </article>
     <% }) %>
   </div>

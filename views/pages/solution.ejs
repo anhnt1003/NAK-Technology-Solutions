@@ -1,0 +1,88 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero photo-hero sol-hero" style="--photo:url(/img/photos/<%= ['datacenter','datacenter','network','fiber','building','glass','skyline','glass'][idx] %>.jpg)">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="crumbs hero-in" aria-label="Breadcrumb"><a href="/<%= lang %>/solutions"><%= t.nav.solutions %></a><span aria-hidden="true">/</span><span><%= c.title %></span></nav>
+    <div class="sol-hero-icon hero-in"><%- icon(sol.icon, 34) %></div>
+    <h1 class="hero-in"><%= c.title %></h1>
+    <p class="lead hero-in"><%= c.tagline %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split top">
+    <div class="split-text reveal">
+      <p class="sub big"><%= c.intro %></p>
+      <a class="btn btn-primary" href="/<%= lang %>/contact"><%= t.x.ctaBtn %> <%- icon('arrow', 18) %></a>
+    </div>
+    <div class="panel reveal" style="--d:100ms">
+      <h3><%= t.x.offeringsHead %></h3>
+      <ul class="checklist">
+        <% c.offerings.forEach(function (it) { %><li><%- icon('check', 18) %><span><%= it %></span></li><% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.benefitsHead %></h2></div>
+    <div class="card-grid four">
+      <% c.benefits.forEach(function (b, i) { %>
+      <div class="card reveal" style="--d:<%= i * 80 %>ms">
+        <span class="card-num"><%= String(i + 1).padStart(2, '0') %></span>
+        <h3><%= b.t %></h3>
+        <p><%= b.d %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.processHead %></h2></div>
+    <ol class="timeline">
+      <% t.x.steps.forEach(function (s, i) { %>
+      <li class="tl-step reveal" style="--d:<%= i * 90 %>ms">
+        <span class="tl-dot"><%= i + 1 %></span>
+        <h3><%= s.t %></h3>
+        <p><%= s.d %></p>
+      </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<% if (sol.vendors && sol.vendors.length) { %>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal center"><h2><%= t.x.techHead %></h2><p class="sub"><%= t.x.techNote %></p></div>
+    <%- include('../partials/logowall', { items: data.vendors.filter(function (v) { return sol.vendors.indexOf(v[1]) > -1; }), cls: 'few' }) %>
+  </div>
+</section>
+<% } %>
+
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head reveal"><h2><%= t.x.faqHead %></h2></div>
+    <%- include('../partials/faq', { items: c.faq }) %>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.otherSolutions %></h2></div>
+    <div class="chips">
+      <% content.solutions.forEach(function (s) { if (s.id === sol.id) return; %>
+      <a class="chip" href="/<%= lang %>/solutions/<%= s.id %>"><%- icon(s.icon, 18) %><%= s[lang].title %></a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.x.ctaTitle, ctaText: t.x.ctaText, ctaBtn: t.x.ctaBtn }) %>
+
+<%- include('../partials/footer') %>

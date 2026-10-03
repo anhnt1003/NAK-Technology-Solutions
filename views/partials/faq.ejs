@@ -1,0 +1,12 @@
+<div class="faq-list">
+  <% items.forEach(function (it) { %>
+  <details class="faq-item">
+    <summary><span><%= it.q %></span><span class="faq-icon" aria-hidden="true"><%- icon('arrow', 18) %></span></summary>
+    <p><%= it.a %></p>
+  </details>
+  <% }) %>
+</div>
+<script type="application/ld+json"><%- JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: items.map(function (it) { return { '@type': 'Question', name: it.q, acceptedAnswer: { '@type': 'Answer', text: it.a } }; })
+}).replace(/</g, '\\u003c') %></script>

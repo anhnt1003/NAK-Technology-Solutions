@@ -18,11 +18,15 @@ server.js          Express app, routes, form liên hệ, sitemap/robots
 src/config.js      Thông tin công ty (địa chỉ, email, domain)
 src/i18n/          Nội dung tiếng Việt / tiếng Anh (sửa chữ ở đây)
 src/data.js        Danh sách logo khách hàng, hãng, ảnh dự án
+src/content/       Nội dung chi tiết: solutions.js (8 giải pháp), posts.js (blog), faq.js, extras.js (dự án, lời chứng thực, đội ngũ, SLA)
+public/files/      Hồ sơ năng lực PDF (VI/EN) để tải về
 views/             Template EJS
 public/img/        Logo NAK, photos/, partners/ (logo khách hàng & hãng)
 ```
 
-Trang: `/vi` `/en` (Trang chủ), `/solutions`, `/projects`, `/about`, `/contact`.
+Trang: Trang chủ, `/solutions` và `/solutions/<id>` (8 trang), `/projects`, `/insights` và `/insights/<slug>`, `/resources` (tải profile + FAQ), `/about`, `/contact`, `/privacy`. Tiền tố `/vi` hoặc `/en`.
+
+Thông tin còn thiếu để hoàn thiện nội dung: xem `CONTENT-REQUEST.md`.
 
 ## Cần xác nhận / bổ sung
 

@@ -14,15 +14,16 @@
   <div class="container">
     <div class="section-head reveal"><p class="eyebrow"><%= t.home.projectsHead.eyebrow %></p><h2><%= t.home.projectsHead.title %></h2></div>
     <div class="card-grid">
-      <% t.projects.forEach(function (p, i) { %>
-      <article class="project reveal" style="--d:<%= i * 90 %>ms">
+      <% t.projects.forEach(function (p, i) { var has = !!content.extras.projectDetails[i]; %>
+      <<%= has ? 'a href="/' + lang + '/projects/' + i + '"' : 'article' %> class="project reveal" style="--d:<%= i * 90 %>ms">
         <div class="project-photo" style="background-image:url(/img/photos/<%= data.projectMedia[i].photo %>.jpg)"><span class="project-logo"><img src="/img/partners/<%= data.projectMedia[i].client[1] %>.png" alt="<%= data.projectMedia[i].client[0] %>" loading="lazy"></span></div>
         <div class="project-body">
           <span class="tag"><%= p.tag %></span>
           <h3><%= p.title %></h3>
           <p><%= p.text %></p>
+          <% if (has) { %><span class="card-more"><%= t.x.viewCase %> <%- icon('arrow', 16) %></span><% } %>
         </div>
-      </article>
+      </<%= has ? 'a' : 'article' %>>
       <% }) %>
     </div>
   </div>

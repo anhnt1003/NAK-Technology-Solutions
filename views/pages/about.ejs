@@ -62,6 +62,27 @@
   </div>
 </section>
 
+<% if (content.extras.team.length) { %>
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.teamHead %></h2></div>
+    <div class="card-grid four">
+      <% content.extras.team.forEach(function (m) { %>
+      <div class="card reveal"><% if (m.photo) { %><img class="avatar" src="<%= m.photo %>" alt="" loading="lazy"><% } %><h3><%= m.name %></h3><p><%= m[lang].role %></p></div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+<% if (content.extras.sla) { %>
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.slaHead %></h2></div>
+    <dl class="sla-list reveal"><% content.extras.sla[lang].forEach(function (r) { %><div><dt><%= r.label %></dt><dd><%= r.value %></dd></div><% }) %></dl>
+  </div>
+</section>
+<% } %>
+
 <%- include('../partials/cta', { ctaTitle: t.about.ctaTitle, ctaText: t.about.ctaText, ctaBtn: t.about.ctaBtn }) %>
 
 <%- include('../partials/footer') %>

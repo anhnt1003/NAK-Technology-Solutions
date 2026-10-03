@@ -5,21 +5,25 @@
   <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
   <div class="orb orb-a" aria-hidden="true"></div>
   <div class="orb orb-b" aria-hidden="true"></div>
-  <div class="container hero-inner">
-    <p class="eyebrow hero-in"><span class="dot"></span><%= t.home.hero.eyebrow %></p>
-    <h1 class="hero-in"><%= t.home.hero.title1 %><br><span class="grad"><%= t.home.hero.title2 %></span></h1>
-    <p class="lead hero-in"><%= t.home.hero.sub %></p>
-    <div class="hero-actions hero-in">
-      <a class="btn btn-primary btn-lg" href="/<%= lang %>/contact"><%= t.home.hero.cta1 %> <%- icon('arrow', 20) %></a>
-      <a class="btn btn-ghost btn-lg" href="/<%= lang %>/solutions"><%= t.home.hero.cta2 %></a>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow hero-in"><span class="dot"></span><%= t.home.hero.eyebrow %></p>
+      <h1 class="hero-in"><%= t.home.hero.title1 %><br><span class="grad"><%= t.home.hero.title2 %></span></h1>
+      <p class="lead hero-in"><%= t.home.hero.sub %></p>
+      <div class="hero-actions hero-in">
+        <a class="btn btn-primary btn-lg" href="/<%= lang %>/contact"><%= t.home.hero.cta1 %> <%- icon('arrow', 20) %></a>
+        <a class="btn btn-ghost btn-lg" href="/<%= lang %>/solutions"><%= t.home.hero.cta2 %></a>
+      </div>
+      <ul class="hero-badges hero-in">
+        <% t.home.hero.badges.forEach(function (b) { %><li><%- icon('check', 16) %><%= b %></li><% }) %>
+      </ul>
     </div>
-    <ul class="hero-badges hero-in">
-      <% t.home.hero.badges.forEach(function (b) { %><li><%- icon('check', 16) %><%= b %></li><% }) %>
-    </ul>
+    <div class="hero-visual hero-in"><%- include('../partials/hero-art') %></div>
   </div>
+  <a class="scroll-cue" href="#stats" aria-label="<%= t.x.scroll %>"><span></span></a>
 </section>
 
-<section class="section stats">
+<section class="section stats" id="stats">
   <div class="container stats-grid">
     <% t.home.stats.forEach(function (s) { %>
     <div class="stat reveal">
@@ -31,10 +35,8 @@
 </section>
 
 <section class="partner-strip" aria-label="<%= t.home.vendorsTitle %>">
-  <div class="container">
-    <p class="marquee-title"><%= t.home.vendorsTitle %></p>
-    <%- include('../partials/logowall', { items: data.vendors, cls: 'compact' }) %>
-  </div>
+  <div class="container"><p class="marquee-title"><%= t.home.vendorsTitle %></p></div>
+  <%- include('../partials/marquee', { items: data.vendors, rev: false }) %>
 </section>
 
 <section class="section" id="solutions">
@@ -45,15 +47,15 @@
       <p class="sub"><%= t.home.solutionsHead.sub %></p>
     </div>
     <div class="card-grid four">
-      <% t.solutions.forEach(function (s, i) { %>
-      <a class="card reveal" href="/<%= lang %>/solutions#<%= s.id %>" style="--d:<%= (i % 4) * 70 %>ms">
-        <div class="card-icon sm"><%- icon(data.solutionIcons[i], 24) %></div>
-        <h3><%= s.title %></h3>
-        <p><%= s.short %></p>
+      <% content.solutions.forEach(function (s, i) { %>
+      <a class="card reveal" href="/<%= lang %>/solutions/<%= s.id %>" style="--d:<%= (i % 4) * 70 %>ms">
+        <div class="card-icon sm"><%- icon(s.icon, 24) %></div>
+        <h3><%= s[lang].title %></h3>
+        <p><%= t.solutions[i].short %></p>
+        <span class="card-more"><%= t.x.readMore %> <%- icon('arrow', 16) %></span>
       </a>
       <% }) %>
     </div>
-    <p class="center-link reveal"><a class="link-arrow" href="/<%= lang %>/solutions"><%= t.home.learnMore %> <%- icon('arrow', 18) %></a></p>
   </div>
 </section>
 
@@ -98,15 +100,16 @@
       <h2><%= t.home.projectsHead.title %></h2>
     </div>
     <div class="card-grid">
-      <% t.projects.forEach(function (p, i) { %>
-      <article class="project reveal" style="--d:<%= i * 90 %>ms">
+      <% t.projects.forEach(function (p, i) { var has = !!content.extras.projectDetails[i]; %>
+      <<%= has ? 'a href="/' + lang + '/projects/' + i + '"' : 'article' %> class="project reveal" style="--d:<%= i * 90 %>ms">
         <div class="project-photo" style="background-image:url(/img/photos/<%= data.projectMedia[i].photo %>.jpg)"><span class="project-logo"><img src="/img/partners/<%= data.projectMedia[i].client[1] %>.png" alt="<%= data.projectMedia[i].client[0] %>" loading="lazy"></span></div>
         <div class="project-body">
           <span class="tag"><%= p.tag %></span>
           <h3><%= p.title %></h3>
           <p><%= p.text %></p>
+          <% if (has) { %><span class="card-more"><%= t.x.viewCase %> <%- icon('arrow', 16) %></span><% } %>
         </div>
-      </article>
+      </<%= has ? 'a' : 'article' %>>
       <% }) %>
     </div>
     <p class="center-link reveal"><a class="link-arrow" href="/<%= lang %>/projects"><%= t.home.viewProjects %> <%- icon('arrow', 18) %></a></p>
@@ -115,12 +118,24 @@
 
 <section class="section">
   <div class="container">
-    <div class="section-head reveal center">
-      <h2><%= t.home.clientsTitle %></h2>
+    <div class="section-head reveal center"><h2><%= t.home.clientsTitle %></h2></div>
+  </div>
+  <%- include('../partials/marquee', { items: data.clients.slice(0, 6), rev: false }) %>
+  <%- include('../partials/marquee', { items: data.clients.slice(6), rev: true }) %>
+</section>
+
+<% if (content.extras.testimonials.length) { %>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.testimonialsHead %></h2></div>
+    <div class="card-grid">
+      <% content.extras.testimonials.forEach(function (q) { %>
+      <figure class="quote reveal"><blockquote><%= q[lang] %></blockquote><figcaption><strong><%= q.name %></strong>, <%= q.role %>, <%= q.company %></figcaption></figure>
+      <% }) %>
     </div>
-    <%- include('../partials/logowall', { items: data.clients, cls: '' }) %>
   </div>
 </section>
+<% } %>
 
 <section class="section section-alt">
   <div class="container">
@@ -152,6 +167,24 @@
       <div class="stat reveal"><div class="stat-value"><%= m.value %></div><div class="stat-label"><%= m.label %></div><a class="src" href="<%= m.url %>" target="_blank" rel="noopener noreferrer"><%= m.source %></a></div>
       <% }) %>
     </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><p class="eyebrow"><%= t.x.insightsEyebrow %></p><h2><%= t.x.latestInsights %></h2></div>
+    <div class="card-grid">
+      <% content.posts.slice(0, 3).forEach(function (p, i) { var c = p[lang]; %>
+      <a class="post-card reveal" href="/<%= lang %>/insights/<%= p.slug %>" style="--d:<%= i * 90 %>ms">
+        <div class="post-photo" style="background-image:url(/img/photos/<%= p.photo %>.jpg)"></div>
+        <div class="post-body">
+          <h3><%= c.title %></h3>
+          <span class="post-meta"><%= p.minutes %> <%= t.x.minRead %></span>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+    <p class="center-link reveal"><a class="link-arrow" href="/<%= lang %>/insights"><%= t.x.allInsights %> <%- icon('arrow', 18) %></a></p>
   </div>
 </section>
 

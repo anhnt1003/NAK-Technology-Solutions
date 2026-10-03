@@ -1,0 +1,37 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.x.resourcesEyebrow %></p>
+    <h1 class="hero-in"><%= t.x.resourcesTitle %></h1>
+    <p class="lead hero-in"><%= t.x.resourcesSub %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="download reveal">
+      <div>
+        <h2><%= t.x.downloadHead %></h2>
+        <p class="sub"><%= t.x.downloadText %></p>
+      </div>
+      <div class="download-btns">
+        <a class="btn btn-primary btn-lg" href="/files/NAK-Ho-so-nang-luc-VI-2026.pdf" download><%- icon('arrow', 18, 'rot90') %> <%= t.x.downloadVi %></a>
+        <a class="btn btn-ghost btn-lg" href="/files/NAK-Company-Profile-EN-2026.pdf" download><%- icon('arrow', 18, 'rot90') %> <%= t.x.downloadEn %></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container narrow">
+    <div class="section-head reveal"><p class="eyebrow"><%= t.x.faqEyebrow %></p><h2><%= t.x.faqTitle %></h2></div>
+    <%- include('../partials/faq', { items: content.faq[lang] }) %>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.x.ctaTitle, ctaText: t.x.ctaText, ctaBtn: t.x.ctaBtn }) %>
+
+<%- include('../partials/footer') %>

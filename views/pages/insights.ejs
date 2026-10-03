@@ -1,0 +1,33 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow hero-in"><span class="dot"></span><%= t.x.insightsEyebrow %></p>
+    <h1 class="hero-in"><%= t.x.insightsTitle %></h1>
+    <p class="lead hero-in"><%= t.x.insightsSub %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card-grid">
+      <% content.posts.forEach(function (p, i) { var c = p[lang]; %>
+      <a class="post-card reveal" href="/<%= lang %>/insights/<%= p.slug %>" style="--d:<%= i * 90 %>ms">
+        <div class="post-photo" style="background-image:url(/img/photos/<%= p.photo %>.jpg)"></div>
+        <div class="post-body">
+          <span class="tag"><%= content.solutions.find(function (s) { return s.id === p.solution; })[lang].title %></span>
+          <h2><%= c.title %></h2>
+          <p><%= c.excerpt %></p>
+          <span class="post-meta"><time datetime="<%= p.date %>"><%= p.date %></time> · <%= p.minutes %> <%= t.x.minRead %></span>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta', { ctaTitle: t.x.ctaTitle, ctaText: t.x.ctaText, ctaBtn: t.x.ctaBtn }) %>
+
+<%- include('../partials/footer') %>

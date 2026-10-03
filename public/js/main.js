@@ -8,6 +8,18 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Scroll progress bar
+  var bar = document.createElement('div');
+  bar.className = 'progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  function onProgress() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + '%';
+  }
+  onProgress();
+  window.addEventListener('scroll', onProgress, { passive: true });
+
   // Mobile menu
   var btn = document.getElementById('menuBtn');
   var nav = document.getElementById('nav');

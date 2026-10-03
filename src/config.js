@@ -23,5 +23,5 @@ module.exports = {
   },
   langs: ['vi', 'en'],
   defaultLang: 'vi',
-  pages: ['', 'solutions', 'projects', 'about', 'contact', 'privacy'],
+  pages: ['', 'solutions', 'projects', 'about', 'contact', 'privacy', 'resources', 'insights'],
 };
