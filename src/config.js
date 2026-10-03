@@ -6,8 +6,14 @@ module.exports = {
   siteUrl: (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, ''),
   domain: 'www.nak.com.vn',
   email: process.env.COMPANY_EMAIL || 'support@nak.com.vn',
-  // Leave empty to hide the phone number everywhere until a real number is provided.
-  phone: process.env.COMPANY_PHONE || '',
+  // Hotline (leave empty to hide everywhere).
+  phone: process.env.COMPANY_PHONE || '0937 212 288',
+  zalo: '0932212288',
+  taxCode: '0312981943',
+  legal: {
+    vi: 'Công Ty TNHH Giải Pháp Công Nghệ NAK',
+    en: 'NAK Technology Solution Co., LTD',
+  },
   founded: 2014,
   address: {
     vi: 'L17-11, Vincom Center, 72 Lê Thánh Tôn, P. Sài Gòn, TP. Hồ Chí Minh',

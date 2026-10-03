@@ -342,3 +342,14 @@ a.card { color: inherit; }
   .brand img { height: 32px; }
 }
 @media (min-width: 641px) and (max-width: 1024px) { .steps.six { grid-template-columns: repeat(2, 1fr); } }
+
+.stat .src { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; line-height: 1.4; }
+.stat .src:hover { color: var(--cyan); }
+.project-logo { position: absolute; left: 16px; top: 16px; z-index: 1; background: #fff; border-radius: 10px; padding: 8px 12px; height: 44px; display: grid; place-items: center; }
+.project-logo img { max-height: 26px; width: auto; }
+.fab { position: fixed; right: 16px; bottom: 16px; z-index: 90; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.fab-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 16px; border-radius: 999px; font-weight: 600; font-size: 14px; box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.6); transition: transform 0.25s var(--ease); }
+.fab-btn:hover { transform: translateY(-2px); }
+.fab-zalo { background: #0068ff; color: #fff; }
+.fab-call { background: var(--grad); color: #1a0d05; }
+@media (max-width: 640px) { .fab-btn span { display: none; } .fab-btn { width: 48px; padding: 0; justify-content: center; } }

@@ -100,7 +100,7 @@
     <div class="card-grid">
       <% t.projects.forEach(function (p, i) { %>
       <article class="project reveal" style="--d:<%= i * 90 %>ms">
-        <div class="project-photo" style="background-image:url(/img/photos/<%= data.projectMedia[i].photo %>.jpg)"></div>
+        <div class="project-photo" style="background-image:url(/img/photos/<%= data.projectMedia[i].photo %>.jpg)"><span class="project-logo"><img src="/img/partners/<%= data.projectMedia[i].client[1] %>.png" alt="<%= data.projectMedia[i].client[0] %>" loading="lazy"></span></div>
         <div class="project-body">
           <span class="tag"><%= p.tag %></span>
           <h3><%= p.title %></h3>
@@ -149,7 +149,7 @@
     </div>
     <div class="stats-grid">
       <% t.market.forEach(function (m) { %>
-      <div class="stat reveal"><div class="stat-value"><%= m.value %></div><div class="stat-label"><%= m.label %></div></div>
+      <div class="stat reveal"><div class="stat-value"><%= m.value %></div><div class="stat-label"><%= m.label %></div><a class="src" href="<%= m.url %>" target="_blank" rel="noopener noreferrer"><%= m.source %></a></div>
       <% }) %>
     </div>
   </div>

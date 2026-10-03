@@ -26,7 +26,7 @@ Trang: `/vi` `/en` (Trang chủ), `/solutions`, `/projects`, `/about`, `/contact
 
 ## Cần xác nhận / bổ sung
 
-- Số điện thoại: đặt `COMPANY_PHONE` trong biến môi trường, hiện đang ẩn.
+- Hotline 0937 212 288, Zalo 0932 212 288 (xác nhận lại hai số có khác nhau không), MST 0312981943: cấu hình ở `src/config.js`.
 - Mô tả chi tiết 8 nhóm giải pháp (`solutions[].items`) do biên soạn từ tên nhóm trong profile, cần NAK rà soát.
 - Gắn logo khách hàng với 3 dự án tiêu biểu (`src/data.js` → `projectMedia`) là suy đoán, cần xác nhận.
 - Các số liệu "Bối cảnh thị trường" lấy từ profile, nên bổ sung nguồn trích dẫn.

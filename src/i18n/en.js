@@ -32,7 +32,7 @@ module.exports = {
     industriesHead: { eyebrow: 'Industries we serve', title: 'Cross-industry delivery, focused on FDI' },
     deliveryHead: { eyebrow: 'Delivery capability', title: 'From design to day-two operations', sub: 'Every project is guided across its lifecycle: from architecture consulting to SLA-backed support after handover.' },
     whyHead: { eyebrow: 'Why partner with NAK', title: 'A dependable infrastructure partner for enterprises' },
-    marketHead: { eyebrow: 'Market context 2026', title: 'Infrastructure decisions carry more weight', sub: 'Hybrid cloud, AI and compliance requirements are reshaping investment decisions.' },
+    marketHead: { eyebrow: 'Market context', title: 'Infrastructure decisions carry more weight', sub: 'Hybrid cloud, AI and compliance requirements are reshaping investment decisions.' },
     projectsHead: { eyebrow: 'Featured projects', title: 'Proven delivery experience' },
     clientsTitle: 'Organizations that trust NAK',
     cta: { title: 'Let’s build your next infrastructure project.', text: 'Share your needs and the NAK team will reply with a solution direction as soon as possible.', btn: 'Contact us now' },
@@ -66,15 +66,15 @@ module.exports = {
     { icon: 'pin', title: 'Local presence', text: 'International enterprise standards.' },
   ],
   market: [
-    { value: '13.2%', label: 'Vietnam ICT growth, 2024' },
-    { value: '40%', label: 'Enterprises running hybrid by 2028' },
-    { value: '70%', label: 'IT organizations planning to hire' },
-    { value: 'US$4.4M', label: 'Average ransomware breach cost' },
+    { value: 'US$158B', label: 'Vietnam digital technology industry revenue in 2024, up 10.2% year on year', source: 'Ministry of Information and Communications (via VietnamPlus, 24 Jan 2025)', url: 'https://en.vietnamplus.vn/vietnams-digital-tech-sector-boasts-nearly-74000-companies-post308893.vnp' },
+    { value: '90%', label: 'Of organizations will adopt a hybrid cloud approach through 2027 (forecast)', source: 'Gartner', url: 'https://www.varindia.com/news/gartner-predicts-90-of-organizations-to-be-adopting-hybrid-cloud-through-2027' },
+    { value: 'US$723.4B', label: 'Worldwide end-user spending on public cloud in 2025 (forecast)', source: 'Gartner, 19 Nov 2024', url: 'https://www.gartner.com/en/newsroom/press-releases/2024-11-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-total-723-billion-dollars-in-2025' },
+    { value: 'US$4.44M', label: 'Global average cost of a data breach in 2025', source: 'IBM Cost of a Data Breach Report 2025', url: 'https://www.helpnetsecurity.com/2025/08/04/ibm-cost-data-breach-report-2025/' },
   ],
   projects: [
     { tag: 'Manufacturing', title: 'Plant network infrastructure upgrade', text: 'Network infrastructure upgrade for a manufacturing environment, ensuring stable connectivity for plant operations.' },
     { tag: 'Enterprise', title: 'Network and systems for a new office', text: 'Design and deployment of network and IT systems for an enterprise’s new office.' },
-    { tag: 'Aviation services', title: 'Critical operations system upgrade', text: 'Upgrade of systems supporting critical operations in aviation services.' },
+    { tag: 'Aviation services', title: 'Critical operations system upgrade', text: 'Upgrade of systems supporting critical operations at an airport.' },
   ],
   projectsPage: {
     eyebrow: 'Projects & Clients', title: 'Proven delivery, trusted by leading organizations', sub: 'From manufacturing plants and aviation services to finance, healthcare and consulting, NAK partners with international and local organizations.',
@@ -94,7 +94,7 @@ module.exports = {
   },
   contact: {
     eyebrow: 'Contact', title: 'Let’s build your next project', sub: 'Fill in the form below or reach us directly. The NAK team will reply as soon as possible.',
-    info: { email: 'Email', phone: 'Phone', address: 'Address', web: 'Website' },
+    info: { taxCode: 'Tax code', zalo: 'Zalo', hotline: 'Hotline', email: 'Email', phone: 'Phone', address: 'Address', web: 'Website' },
     form: {
       name: 'Full name', email: 'Email', phone: 'Phone', company: 'Company', service: 'Solution of interest', message: 'How can we help?',
       select: 'Select a solution group', other: 'Other', send: 'Send request', sending: 'Sending...', optional: '(optional)',
@@ -103,6 +103,6 @@ module.exports = {
       privacy: 'Your information is only used to respond to your enquiry.',
     },
   },
-  footer: { about: 'System integration & IT infrastructure: infrastructure, software, cloud and services for enterprises.', explore: 'Explore', solutions: 'Solutions', contact: 'Contact', rights: 'All rights reserved.' },
+  footer: { about: 'System integration & IT infrastructure: infrastructure, software, cloud and services for enterprises.', explore: 'Explore', solutions: 'Solutions', contact: 'Contact', tax: 'Tax code', rights: 'All rights reserved.' },
   notFound: { title: 'Page not found', text: 'The page you are looking for may have moved or no longer exists.', btn: 'Back to home' },
 };

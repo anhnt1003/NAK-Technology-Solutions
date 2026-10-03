@@ -32,7 +32,7 @@ module.exports = {
     industriesHead: { eyebrow: 'Lĩnh vực phục vụ', title: 'Kinh nghiệm đa ngành, trọng tâm FDI' },
     deliveryHead: { eyebrow: 'Năng lực triển khai', title: 'Từ thiết kế đến vận hành dài hạn', sub: 'Mỗi dự án được dẫn dắt xuyên suốt vòng đời: từ tư vấn kiến trúc đến hỗ trợ theo SLA sau bàn giao.' },
     whyHead: { eyebrow: 'Vì sao chọn NAK', title: 'Đối tác hạ tầng đáng tin cậy cho doanh nghiệp' },
-    marketHead: { eyebrow: 'Bối cảnh thị trường 2026', title: 'Hạ tầng CNTT ngày càng quan trọng', sub: 'Hybrid cloud, AI và yêu cầu tuân thủ đang định hình lại quyết định đầu tư.' },
+    marketHead: { eyebrow: 'Bối cảnh thị trường', title: 'Hạ tầng CNTT ngày càng quan trọng', sub: 'Hybrid cloud, AI và yêu cầu tuân thủ đang định hình lại quyết định đầu tư.' },
     projectsHead: { eyebrow: 'Dự án tiêu biểu', title: 'Kinh nghiệm triển khai thực tế' },
     clientsTitle: 'Các tổ chức đã tin tưởng NAK',
     cta: { title: 'Cùng NAK xây dựng dự án hạ tầng CNTT tiếp theo.', text: 'Chia sẻ nhu cầu của bạn, đội ngũ NAK sẽ phản hồi với định hướng giải pháp trong thời gian sớm nhất.', btn: 'Liên hệ ngay' },
@@ -66,15 +66,15 @@ module.exports = {
     { icon: 'pin', title: 'Hiện diện tại Việt Nam', text: 'Chuẩn phục vụ doanh nghiệp quốc tế.' },
   ],
   market: [
-    { value: '13,2%', label: 'Tăng trưởng ICT Việt Nam, 2024' },
-    { value: '40%', label: 'Doanh nghiệp vận hành hybrid vào 2028' },
-    { value: '70%', label: 'Tổ chức CNTT dự kiến tăng nhân sự' },
-    { value: '4,4 triệu USD', label: 'Chi phí trung bình một vụ ransomware' },
+    { value: '158 tỷ USD', label: 'Doanh thu ngành công nghiệp công nghệ số Việt Nam năm 2024, tăng 10,2% so với 2023', source: 'Bộ Thông tin và Truyền thông (qua VietnamPlus, 24/01/2025)', url: 'https://en.vietnamplus.vn/vietnams-digital-tech-sector-boasts-nearly-74000-companies-post308893.vnp' },
+    { value: '90%', label: 'Tổ chức sẽ áp dụng hybrid cloud đến hết năm 2027 (dự báo)', source: 'Gartner', url: 'https://www.varindia.com/news/gartner-predicts-90-of-organizations-to-be-adopting-hybrid-cloud-through-2027' },
+    { value: '723,4 tỷ USD', label: 'Chi tiêu của người dùng cuối cho public cloud toàn cầu năm 2025 (dự báo)', source: 'Gartner, 19/11/2024', url: 'https://www.gartner.com/en/newsroom/press-releases/2024-11-19-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-total-723-billion-dollars-in-2025' },
+    { value: '4,44 triệu USD', label: 'Chi phí trung bình toàn cầu của một vụ rò rỉ dữ liệu năm 2025', source: 'IBM Cost of a Data Breach Report 2025', url: 'https://www.helpnetsecurity.com/2025/08/04/ibm-cost-data-breach-report-2025/' },
   ],
   projects: [
     { tag: 'Sản xuất', title: 'Nâng cấp hạ tầng mạng nhà máy', text: 'Nâng cấp hạ tầng mạng cho môi trường sản xuất, đảm bảo kết nối ổn định cho hoạt động nhà máy.' },
     { tag: 'Doanh nghiệp', title: 'Mạng và hệ thống cho văn phòng mới', text: 'Thiết kế và triển khai hạ tầng mạng và hệ thống CNTT cho văn phòng mới của doanh nghiệp.' },
-    { tag: 'Dịch vụ hàng không', title: 'Nâng cấp hệ thống vận hành trọng yếu', text: 'Nâng cấp hệ thống phục vụ vận hành trọng yếu trong lĩnh vực dịch vụ hàng không.' },
+    { tag: 'Dịch vụ hàng không', title: 'Nâng cấp hệ thống vận hành trọng yếu', text: 'Nâng cấp hệ thống phục vụ vận hành trọng yếu tại cảng hàng không.' },
   ],
   projectsPage: {
     eyebrow: 'Dự án & Khách hàng', title: 'Kinh nghiệm triển khai thực tế, được nhiều tổ chức tin tưởng', sub: 'Từ nhà máy sản xuất, dịch vụ hàng không đến tài chính, y tế và tư vấn, NAK đồng hành cùng các tổ chức quốc tế và trong nước.',
@@ -94,7 +94,7 @@ module.exports = {
   },
   contact: {
     eyebrow: 'Liên hệ', title: 'Cùng NAK xây dựng dự án tiếp theo', sub: 'Điền thông tin bên dưới hoặc liên hệ trực tiếp, đội ngũ NAK sẽ phản hồi sớm nhất.',
-    info: { email: 'Email', phone: 'Điện thoại', address: 'Địa chỉ', web: 'Website' },
+    info: { taxCode: 'Mã số thuế', zalo: 'Zalo', hotline: 'Hotline', email: 'Email', phone: 'Điện thoại', address: 'Địa chỉ', web: 'Website' },
     form: {
       name: 'Họ và tên', email: 'Email', phone: 'Số điện thoại', company: 'Công ty', service: 'Nhóm giải pháp quan tâm', message: 'Nội dung cần tư vấn',
       select: 'Chọn nhóm giải pháp', other: 'Khác', send: 'Gửi yêu cầu', sending: 'Đang gửi...', optional: '(không bắt buộc)',
@@ -103,6 +103,6 @@ module.exports = {
       privacy: 'Thông tin của bạn chỉ được dùng để phản hồi yêu cầu tư vấn.',
     },
   },
-  footer: { about: 'Tích hợp hệ thống & hạ tầng CNTT: hạ tầng, phần mềm, cloud và dịch vụ cho doanh nghiệp.', explore: 'Khám phá', solutions: 'Giải pháp', contact: 'Liên hệ', rights: 'Bảo lưu mọi quyền.' },
+  footer: { about: 'Tích hợp hệ thống & hạ tầng CNTT: hạ tầng, phần mềm, cloud và dịch vụ cho doanh nghiệp.', explore: 'Khám phá', solutions: 'Giải pháp', contact: 'Liên hệ', tax: 'MST', rights: 'Bảo lưu mọi quyền.' },
   notFound: { title: 'Không tìm thấy trang', text: 'Trang bạn tìm có thể đã bị di chuyển hoặc không còn tồn tại.', btn: 'Về trang chủ' },
 };

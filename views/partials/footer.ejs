@@ -27,16 +27,21 @@
       <h3><%= t.footer.contact %></h3>
       <ul class="footer-contact">
         <li><%- icon('mail', 18) %><a href="mailto:<%= cfg.email %>"><%= cfg.email %></a></li>
-        <% if (cfg.phone) { %><li><%- icon('phone', 18) %><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></li><% } %>
+        <li><%- icon('phone', 18) %><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>">Hotline: <%= cfg.phone %></a></li>
+        <li><%- icon('chat', 18) %><a href="https://zalo.me/<%= cfg.zalo %>" target="_blank" rel="noopener noreferrer">Zalo: <%= cfg.zalo.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3') %></a></li>
         <li><%- icon('globe', 18) %><a href="https://<%= cfg.domain %>"><%= cfg.domain %></a></li>
         <li><%- icon('pin', 18) %><span><%= cfg.address[lang] %></span></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>&copy; <%= new Date().getFullYear() %> <%= cfg.name %>. <%= t.footer.rights %></span>
+    <span>&copy; <%= new Date().getFullYear() %> <%= cfg.legal[lang] %> (<%= cfg.name %>). <%= t.footer.tax %>: <%= cfg.taxCode %>. <%= t.footer.rights %></span>
   </div>
 </footer>
+<div class="fab">
+  <a class="fab-btn fab-zalo" href="https://zalo.me/<%= cfg.zalo %>" target="_blank" rel="noopener noreferrer" aria-label="Zalo <%= cfg.zalo %>"><%- icon('chat', 22) %><span>Zalo</span></a>
+  <a class="fab-btn fab-call" href="tel:<%= cfg.phone.replace(/\s/g, '') %>" aria-label="Hotline <%= cfg.phone %>"><%- icon('phone', 22) %><span><%= cfg.phone %></span></a>
+</div>
 <script src="/js/main.js" defer></script>
 </body>
 </html>

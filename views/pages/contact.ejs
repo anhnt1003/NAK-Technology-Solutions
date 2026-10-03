@@ -15,9 +15,11 @@
     <aside class="contact-info reveal">
       <ul>
         <li><span class="ci"><%- icon('mail', 22) %></span><div><small><%= t.contact.info.email %></small><a href="mailto:<%= cfg.email %>"><%= cfg.email %></a></div></li>
-        <% if (cfg.phone) { %><li><span class="ci"><%- icon('phone', 22) %></span><div><small><%= t.contact.info.phone %></small><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></div></li><% } %>
+        <li><span class="ci"><%- icon('phone', 22) %></span><div><small><%= t.contact.info.hotline %></small><a href="tel:<%= cfg.phone.replace(/\s/g, '') %>"><%= cfg.phone %></a></div></li>
+        <li><span class="ci"><%- icon('chat', 22) %></span><div><small><%= t.contact.info.zalo %></small><a href="https://zalo.me/<%= cfg.zalo %>" target="_blank" rel="noopener noreferrer"><%= cfg.zalo.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3') %></a></div></li>
         <li><span class="ci"><%- icon('pin', 22) %></span><div><small><%= t.contact.info.address %></small><span><%= cfg.address[lang] %></span></div></li>
         <li><span class="ci"><%- icon('globe', 22) %></span><div><small><%= t.contact.info.web %></small><a href="https://<%= cfg.domain %>"><%= cfg.domain %></a></div></li>
+        <li><span class="ci"><%- icon('check', 22) %></span><div><small><%= cfg.legal[lang] %></small><span><%= t.contact.info.taxCode %>: <%= cfg.taxCode %></span></div></li>
       </ul>
     </aside>
 
