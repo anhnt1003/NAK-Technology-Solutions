@@ -102,6 +102,7 @@ module.exports = {
       ok: 'Thank you! We have received your request and will reply shortly.', fail: 'Could not send. Please try again or contact us by email.',
       errName: 'Please enter your name.', errEmail: 'Please enter a valid email.', errMessage: 'Please enter your message (at least 10 characters).',
       privacy: 'Your information is only used to respond to your enquiry.',
+      consentPre: 'I agree that NAK may collect and process my personal data to respond to this request, in accordance with the', consentLink: 'Privacy Policy', errConsent: 'Please agree to continue.',
     },
   },
   footer: { about: 'System integration & IT infrastructure: infrastructure, software, cloud and services for enterprises.', explore: 'Explore', solutions: 'Solutions', contact: 'Contact', tax: 'Tax code', rights: 'All rights reserved.' },
