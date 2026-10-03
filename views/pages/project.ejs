@@ -16,6 +16,7 @@
     <div class="reveal">
       <% if (d.challenge) { %><h2 class="h-sm"><%= t.x.projectChallenge %></h2><p class="sub"><%= d.challenge %></p><% } %>
       <% if (d.solution) { %><h2 class="h-sm"><%= t.x.projectSolution %></h2><p class="sub"><%= d.solution %></p><% } %>
+      <% if (d.scope && d.scope.length) { %><h2 class="h-sm"><%= t.x.projectScope %></h2><ul class="checklist"><% d.scope.forEach(function (r) { %><li><%- icon('check', 18) %><span><%= r %></span></li><% }) %></ul><% } %>
       <% if (d.results && d.results.length) { %><h2 class="h-sm"><%= t.x.projectResults %></h2><ul class="checklist"><% d.results.forEach(function (r) { %><li><%- icon('check', 18) %><span><%= r %></span></li><% }) %></ul><% } %>
     </div>
     <aside class="panel reveal" style="--d:100ms">
@@ -28,6 +29,19 @@
     </aside>
   </div>
 </section>
+
+<% if (d.phases && d.phases.length) { %>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal"><h2><%= t.x.processHead %></h2></div>
+    <ol class="timeline">
+      <% d.phases.forEach(function (s, i) { %>
+      <li class="tl-step reveal" style="--d:<%= i * 90 %>ms"><span class="tl-dot"><%= i + 1 %></span><h3><%= s.t %></h3><p><%= s.d %></p></li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+<% } %>
 
 <%- include('../partials/cta', { ctaTitle: t.x.ctaTitle, ctaText: t.x.ctaText, ctaBtn: t.x.ctaBtn }) %>
 

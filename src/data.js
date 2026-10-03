@@ -1,7 +1,7 @@
 // Non-text data shared by both languages.
 module.exports = {
   clients: [
-    ['Terumo', 'terumo'], ['Atlas+', 'atlas'], ['SCSC', 'scsc'], ['VinaCapital', 'vinacapital'],
+    ['Terumo BCT', 'terumo'], ['Atlas+', 'atlas'], ['SCSC', 'scsc'], ['VinaCapital', 'vinacapital'],
     ['Renesas', 'renesas'], ['Boston Scientific', 'boston-scientific'], ['TÜV SÜD', 'tuv-sud'], ['Decathlon', 'decathlon'],
     ['BayWa r.e.', 'baywa'], ['Bejo', 'bejo'], ['EY', 'ey'], ['Otsuka', 'otsuka'],
   ],
@@ -11,8 +11,8 @@ module.exports = {
   ],
   // Project cards: client logo + photo shown on the card
   projectMedia: [
-    { client: ['Terumo', 'terumo'], photo: 'network' },
-    { client: ['Atlas+', 'atlas'], photo: 'building' },
+    { client: ['Terumo BCT', 'terumo'], photo: 'network' },
+    { client: ['Atlas', 'atlas'], photo: 'building' },
     { client: ['SCSC', 'scsc'], photo: 'skyline' },
   ],
   solutionIcons: ['server', 'database', 'network', 'shield', 'monitor', 'layers', 'cloud', 'wrench'],

@@ -73,9 +73,9 @@ module.exports = {
     { value: 'US$4.44M', label: 'Global average cost of a data breach in 2025', source: 'IBM Cost of a Data Breach Report 2025', url: 'https://www.helpnetsecurity.com/2025/08/04/ibm-cost-data-breach-report-2025/' },
   ],
   projects: [
-    { tag: 'Manufacturing', title: 'Plant network infrastructure upgrade', text: 'Network infrastructure upgrade for a manufacturing environment, ensuring stable connectivity for plant operations.' },
-    { tag: 'Enterprise', title: 'Network and systems for a new office', text: 'Design and deployment of network and IT systems for an enterprise’s new office.' },
-    { tag: 'Aviation services', title: 'Critical operations system upgrade', text: 'Upgrade of systems supporting critical operations at an airport.' },
+    { tag: 'Manufacturing', title: 'Full replacement of plant network infrastructure', text: 'Consulting and delivery of a complete replacement of the Terumo BCT plant network infrastructure.' },
+    { tag: 'Enterprise', title: 'Network & system infrastructure for a new office', text: 'Consulting and delivery of the entire network and system infrastructure for Atlas\u2019s new office.' },
+    { tag: 'Aviation services', title: 'Critical operations system upgrade', text: 'Upgrade of critical operations systems for SCSC at the airport.' },
   ],
   projectsPage: {
     eyebrow: 'Projects & Clients', title: 'Proven delivery, trusted by leading organizations', sub: 'From manufacturing plants and aviation services to finance, healthcare and consulting, NAK partners with international and local organizations.',

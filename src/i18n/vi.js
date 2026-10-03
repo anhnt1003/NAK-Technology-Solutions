@@ -73,9 +73,9 @@ module.exports = {
     { value: '4,44 triệu USD', label: 'Chi phí trung bình toàn cầu của một vụ rò rỉ dữ liệu năm 2025', source: 'IBM Cost of a Data Breach Report 2025', url: 'https://www.helpnetsecurity.com/2025/08/04/ibm-cost-data-breach-report-2025/' },
   ],
   projects: [
-    { tag: 'Sản xuất', title: 'Nâng cấp hạ tầng mạng nhà máy', text: 'Nâng cấp hạ tầng mạng cho môi trường sản xuất, đảm bảo kết nối ổn định cho hoạt động nhà máy.' },
-    { tag: 'Doanh nghiệp', title: 'Mạng và hệ thống cho văn phòng mới', text: 'Thiết kế và triển khai hạ tầng mạng và hệ thống CNTT cho văn phòng mới của doanh nghiệp.' },
-    { tag: 'Dịch vụ hàng không', title: 'Nâng cấp hệ thống vận hành trọng yếu', text: 'Nâng cấp hệ thống phục vụ vận hành trọng yếu tại cảng hàng không.' },
+    { tag: 'Sản xuất', title: 'Thay thế toàn bộ hạ tầng mạng nhà máy', text: 'Tư vấn và triển khai thay thế toàn bộ hạ tầng network của nhà máy Terumo BCT.' },
+    { tag: 'Doanh nghiệp', title: 'Hạ tầng network & system cho văn phòng mới', text: 'Tư vấn và triển khai toàn bộ hạ tầng network và system cho văn phòng mới của Atlas.' },
+    { tag: 'Dịch vụ hàng không', title: 'Nâng cấp hệ thống vận hành trọng yếu', text: 'Nâng cấp hệ thống vận hành trọng yếu cho SCSC tại cảng hàng không.' },
   ],
   projectsPage: {
     eyebrow: 'Dự án & Khách hàng', title: 'Kinh nghiệm triển khai thực tế, được nhiều tổ chức tin tưởng', sub: 'Từ nhà máy sản xuất, dịch vụ hàng không đến tài chính, y tế và tư vấn, NAK đồng hành cùng các tổ chức quốc tế và trong nước.',
