@@ -126,8 +126,10 @@
       e.preventDefault();
       status.textContent = ''; status.className = 'form-status';
       var d = Object.fromEntries(new FormData(form).entries());
+      d.consent = form.elements.consent.checked;
       var bad = false;
-      showErr('name', ''); showErr('email', ''); showErr('message', '');
+      showErr('name', ''); showErr('email', ''); showErr('message', ''); showErr('consent', '');
+      if (!d.consent) { showErr('consent', form.dataset.errConsent); bad = true; }
       if (!d.name.trim()) { showErr('name', form.dataset.errName); bad = true; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email.trim())) { showErr('email', form.dataset.errEmail); bad = true; }
       if (d.message.trim().length < 10) { showErr('message', form.dataset.errMessage); bad = true; }

@@ -26,10 +26,11 @@ Trang: `/vi` `/en` (Trang chủ), `/solutions`, `/projects`, `/about`, `/contact
 
 ## Cần xác nhận / bổ sung
 
-- Hotline 0937 212 288, Zalo 0932 212 288 (xác nhận lại hai số có khác nhau không), MST 0312981943: cấu hình ở `src/config.js`.
+- Hotline và Zalo: 0937 212 288, MST 0312981943 (cấu hình ở `src/config.js`).
 - Mô tả chi tiết 8 nhóm giải pháp (`solutions[].items`) do biên soạn từ tên nhóm trong profile, cần NAK rà soát.
 - Gắn logo khách hàng với 3 dự án tiêu biểu (`src/data.js` → `projectMedia`) là suy đoán, cần xác nhận.
-- Các số liệu "Bối cảnh thị trường" lấy từ profile, nên bổ sung nguồn trích dẫn.
+- Số liệu "Bối cảnh thị trường" đã có nguồn trích dẫn (xem `market` trong `src/i18n`); kiểm tra lại link nguồn Gartner trước khi công bố.
+- **Chính sách bảo mật là BẢN NHÁP** (`src/privacy.js`): nhờ pháp chế rà soát (đặc biệt thời gian lưu trữ 24 tháng, chuyển dữ liệu ra nước ngoài), sau đó đặt `privacyDraft: false` trong `src/config.js` để tắt banner nháp.
 - Quyền sử dụng logo khách hàng và hãng trên website.
 
 ## Đẩy lên GitHub

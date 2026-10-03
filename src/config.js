@@ -8,7 +8,9 @@ module.exports = {
   email: process.env.COMPANY_EMAIL || 'support@nak.com.vn',
   // Hotline (leave empty to hide everywhere).
   phone: process.env.COMPANY_PHONE || '0937 212 288',
-  zalo: '0932212288',
+  zalo: '0937212288',
+  // Show the 'draft' banner on the privacy page until legal review is complete.
+  privacyDraft: true,
   taxCode: '0312981943',
   legal: {
     vi: 'Công Ty TNHH Giải Pháp Công Nghệ NAK',
@@ -21,5 +23,5 @@ module.exports = {
   },
   langs: ['vi', 'en'],
   defaultLang: 'vi',
-  pages: ['', 'solutions', 'projects', 'about', 'contact'],
+  pages: ['', 'solutions', 'projects', 'about', 'contact', 'privacy'],
 };

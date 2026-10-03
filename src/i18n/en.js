@@ -8,6 +8,7 @@ module.exports = {
     projects: { title: 'Projects & Clients | NAK Technology Solutions', desc: 'Featured projects and the organizations that trust NAK across manufacturing, aviation services, finance, healthcare and more.' },
     about: { title: 'About | NAK Technology Solutions', desc: 'More than a decade delivering infrastructure and IT services in Vietnam. Our mission, delivery capability and why enterprises partner with NAK.' },
     contact: { title: 'Contact | NAK Technology Solutions', desc: 'Contact NAK Technology Solutions at Vincom Center, Ho Chi Minh City for your next IT infrastructure project.' },
+    privacy: { title: 'Privacy Policy | NAK Technology Solutions', desc: 'How NAK Technology Solutions collects, uses and protects personal data.' },
     notFound: { title: 'Page not found | NAK Technology Solutions', desc: 'The page you are looking for does not exist.' },
   },
   home: {

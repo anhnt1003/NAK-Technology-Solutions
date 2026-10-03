@@ -1,0 +1,27 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<section class="page-hero">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="container">
+    <h1 class="hero-in"><%= t.privacy.title %></h1>
+    <p class="lead hero-in"><%= t.privacy.updated %></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="legal">
+      <% if (cfg.privacyDraft) { %><p class="draft-banner" role="note"><%= t.privacy.draftBanner %></p><% } %>
+      <p><%= t.privacy.intro %></p>
+      <% t.privacy.sections.forEach(function (s) { %>
+      <h2><%= s.h %></h2>
+      <% (s.p || []).forEach(function (x) { %><p><%= x %></p><% }) %>
+      <% if (s.ul) { %><ul><% s.ul.forEach(function (x) { %><li><%= x %></li><% }) %></ul><% } %>
+      <% (s.after || []).forEach(function (x) { %><p><%= x %></p><% }) %>
+      <% }) %>
+    </article>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -353,3 +353,16 @@ a.card { color: inherit; }
 .fab-zalo { background: #0068ff; color: #fff; }
 .fab-call { background: var(--grad); color: #1a0d05; }
 @media (max-width: 640px) { .fab-btn span { display: none; } .fab-btn { width: 48px; padding: 0; justify-content: center; } }
+
+.legal { max-width: 800px; margin-inline: auto; }
+.legal h2 { font-size: 1.35rem; margin: 40px 0 12px; }
+.legal p { color: var(--muted); margin-top: 12px; }
+.legal ul { margin-top: 12px; display: grid; gap: 8px; }
+.legal li { color: var(--muted); padding-left: 22px; position: relative; }
+.legal li::before { content: ''; position: absolute; left: 4px; top: 0.7em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); }
+.draft-banner { background: rgba(255, 122, 61, 0.12); border: 1px solid rgba(255, 122, 61, 0.4); color: var(--text) !important; padding: 12px 16px; border-radius: 12px; font-weight: 600; margin-bottom: 24px; }
+.consent .check { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; font-size: 14px; color: var(--muted); cursor: pointer; }
+.consent input { width: 20px; height: 20px; min-height: 0; margin-top: 2px; flex: none; accent-color: #ff7a3d; }
+.consent a, .legal-link { text-decoration: underline; text-underline-offset: 3px; color: var(--text); }
+.consent a:hover, .legal-link:hover { color: var(--cyan); }
+.footer-bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }

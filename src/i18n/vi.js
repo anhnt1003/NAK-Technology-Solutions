@@ -8,6 +8,7 @@ module.exports = {
     projects: { title: 'Dự án & Khách hàng | NAK Technology Solutions', desc: 'Các dự án tiêu biểu và những tổ chức đã tin tưởng NAK trong sản xuất, hàng không, tài chính, y tế và nhiều lĩnh vực khác.' },
     about: { title: 'Về NAK | NAK Technology Solutions', desc: 'Hơn một thập kỷ cung cấp hạ tầng và dịch vụ CNTT tại Việt Nam. Sứ mệnh, năng lực triển khai và lý do doanh nghiệp chọn NAK.' },
     contact: { title: 'Liên hệ | NAK Technology Solutions', desc: 'Liên hệ NAK Technology Solutions tại Vincom Center, TP. Hồ Chí Minh để được tư vấn dự án hạ tầng CNTT.' },
+    privacy: { title: 'Chính sách bảo mật | NAK Technology Solutions', desc: 'Chính sách bảo mật và xử lý dữ liệu cá nhân của NAK Technology Solutions.' },
     notFound: { title: 'Không tìm thấy trang | NAK Technology Solutions', desc: 'Trang bạn tìm không tồn tại.' },
   },
   home: {
@@ -101,6 +102,7 @@ module.exports = {
       ok: 'Cảm ơn bạn! Chúng tôi đã nhận được yêu cầu và sẽ phản hồi sớm.', fail: 'Gửi không thành công. Vui lòng thử lại hoặc liên hệ qua email.',
       errName: 'Vui lòng nhập họ tên.', errEmail: 'Vui lòng nhập email hợp lệ.', errMessage: 'Vui lòng nhập nội dung (tối thiểu 10 ký tự).',
       privacy: 'Thông tin của bạn chỉ được dùng để phản hồi yêu cầu tư vấn.',
+      consentPre: 'Tôi đồng ý để NAK thu thập và xử lý thông tin cá nhân của tôi nhằm phản hồi yêu cầu này, theo', consentLink: 'Chính sách bảo mật', errConsent: 'Vui lòng đồng ý để tiếp tục.',
     },
   },
   footer: { about: 'Tích hợp hệ thống & hạ tầng CNTT: hạ tầng, phần mềm, cloud và dịch vụ cho doanh nghiệp.', explore: 'Khám phá', solutions: 'Giải pháp', contact: 'Liên hệ', tax: 'MST', rights: 'Bảo lưu mọi quyền.' },

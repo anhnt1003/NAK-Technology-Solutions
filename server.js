@@ -9,6 +9,9 @@ const cfg = require('./src/config');
 const { icon } = require('./src/icons');
 const data = require('./src/data');
 const dict = { vi: require('./src/i18n/vi'), en: require('./src/i18n/en') };
+const privacy = require('./src/privacy');
+dict.vi.privacy = privacy.vi;
+dict.en.privacy = privacy.en;
 
 const app = express();
 const isProd = process.env.NODE_ENV === 'production';
@@ -24,8 +27,8 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'"],
-        styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        fontSrc: ["'self'"],
         imgSrc: ["'self'", 'data:'],
         connectSrc: ["'self'"],
         formAction: ["'self'"],
@@ -84,6 +87,7 @@ app.get(`${L}/solutions`, render('solutions'));
 app.get(`${L}/projects`, render('projects'));
 app.get(`${L}/about`, render('about'));
 app.get(`${L}/contact`, render('contact'));
+app.get(`${L}/privacy`, render('privacy', 'privacy'));
 
 // Contact form
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 5, standardHeaders: true, legacyHeaders: false });
@@ -103,6 +107,7 @@ function getTransport() {
 app.post('/api/contact', limiter, async (req, res) => {
   const b = req.body || {};
   if (b.website) return res.json({ ok: true }); // honeypot: silently drop bots
+  if (b.consent !== true) return res.status(400).json({ ok: false }); // consent is required (PDPL)
 
   const data = {
     name: clean(b.name, 120),
@@ -138,6 +143,7 @@ app.post('/api/contact', limiter, async (req, res) => {
         `Phone: ${data.phone}`,
         `Company: ${data.company}`,
         `Service: ${data.service}`,
+        `Consent to personal data processing: yes (${new Date().toISOString()})`,
         '',
         data.message,
       ].join('\n'),
