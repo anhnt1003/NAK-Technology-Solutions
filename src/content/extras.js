@@ -58,11 +58,11 @@ module.exports = {
     },
     2: {
       vi: {
-        challenge: 'Các hệ thống vận hành trọng yếu tại cảng hàng không đòi hỏi độ tin cậy và tính sẵn sàng rất cao. Nâng cấp loại hệ thống này cần lập kế hoạch cẩn thận, kiểm thử kỹ và triển khai sao cho hạn chế tối đa ảnh hưởng đến hoạt động đang diễn ra.',
-        solution: 'NAK thực hiện nâng cấp hệ thống vận hành trọng yếu cho SCSC tại cảng hàng không: đánh giá hệ thống hiện hữu, thiết kế phương án nâng cấp, triển khai theo kế hoạch có kiểm soát, kiểm thử và bàn giao.',
+        challenge: 'SCSC là công ty cổ phần dịch vụ hàng hóa hoạt động tại cảng hàng không, nơi dòng hàng được xử lý liên tục và gắn chặt với lịch bay. Các hệ thống phục vụ vận hành ở đây đòi hỏi độ tin cậy và tính sẵn sàng rất cao, nên việc nâng cấp phải được lập kế hoạch cẩn thận, kiểm thử kỹ và triển khai sao cho hạn chế tối đa ảnh hưởng đến hoạt động khai thác đang diễn ra.',
+        solution: 'NAK nâng cấp hệ thống vận hành trọng yếu cho SCSC: đánh giá hệ thống hiện hữu, thiết kế phương án nâng cấp ưu tiên tính liên tục của hoạt động khai thác hàng hóa, triển khai theo kế hoạch có kiểm soát, kiểm thử và bàn giao.',
         scope: ['Đánh giá hiện trạng các hệ thống vận hành trọng yếu', 'Thiết kế phương án nâng cấp, ưu tiên tính sẵn sàng và dự phòng', 'Triển khai nâng cấp theo kế hoạch có kiểm soát', 'Kiểm thử và nghiệm thu trước khi đưa vào vận hành', 'Bàn giao tài liệu và hỗ trợ sau triển khai'],
         phases: [
-          { t: 'Đánh giá', d: 'Xác định hiện trạng, yêu cầu vận hành và các ràng buộc của hệ thống trọng yếu.' },
+          { t: 'Đánh giá', d: 'Xác định hiện trạng, yêu cầu vận hành và các ràng buộc của hệ thống phục vụ khai thác hàng hóa.' },
           { t: 'Thiết kế', d: 'Xây dựng phương án nâng cấp, lộ trình và kế hoạch hạn chế ảnh hưởng đến vận hành.' },
           { t: 'Triển khai', d: 'Thực hiện nâng cấp theo từng bước đã thống nhất với khách hàng.' },
           { t: 'Bàn giao', d: 'Kiểm thử, nghiệm thu, bàn giao tài liệu và hỗ trợ sau triển khai.' },
@@ -70,11 +70,11 @@ module.exports = {
         results: ['Hệ thống vận hành trọng yếu được nâng cấp', 'Hệ thống được kiểm thử và nghiệm thu trước khi đưa vào vận hành', 'Tài liệu cấu hình và vận hành được bàn giao'],
       },
       en: {
-        challenge: 'Critical operations systems at an airport demand very high reliability and availability. Upgrading them requires careful planning, thorough testing and delivery that minimizes impact on ongoing operations.',
-        solution: 'NAK carried out the upgrade of SCSC\u2019s critical operations systems at the airport: assessing the existing systems, designing the upgrade, delivering under a controlled plan, testing and handing over.',
+        challenge: 'SCSC is an air cargo services joint-stock company operating at the airport, where cargo flows continuously and is tied closely to flight schedules. The systems supporting its operations demand very high reliability and availability, so any upgrade must be carefully planned, thoroughly tested and delivered in a way that minimizes impact on live operations.',
+        solution: 'NAK upgraded SCSC\u2019s critical operations systems: assessing the existing systems, designing an upgrade that prioritizes continuity of cargo operations, delivering under a controlled plan, testing and handing over.',
         scope: ['Assessment of the current critical operations systems', 'Upgrade design prioritizing availability and redundancy', 'Controlled, planned delivery of the upgrade', 'Testing and acceptance before going into operation', 'Documentation handover and post-deployment support'],
         phases: [
-          { t: 'Assess', d: 'Establish the current state, operational requirements and constraints of the critical systems.' },
+          { t: 'Assess', d: 'Establish the current state, operational requirements and constraints of the systems supporting cargo operations.' },
           { t: 'Design', d: 'Build the upgrade approach, roadmap and a plan to limit impact on operations.' },
           { t: 'Deliver', d: 'Carry out the upgrade in steps agreed with the customer.' },
           { t: 'Handover', d: 'Test, accept, hand over documentation and provide post-deployment support.' },
