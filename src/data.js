@@ -14,6 +14,7 @@ module.exports = {
     { client: ['Terumo BCT', 'terumo'], photo: 'network' },
     { client: ['Atlas', 'atlas'], photo: 'building' },
     { client: ['SCSC', 'scsc'], photo: 'skyline' },
+    { client: ['Decathlon', 'decathlon'], photo: 'glass' },
   ],
   solutionIcons: ['server', 'database', 'network', 'shield', 'monitor', 'layers', 'cloud', 'wrench'],
   industryIcons: ['landmark', 'heart', 'bolt', 'radio', 'book'],

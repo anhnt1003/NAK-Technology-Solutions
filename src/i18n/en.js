@@ -75,7 +75,8 @@ module.exports = {
   projects: [
     { tag: 'Manufacturing', title: 'Full replacement of plant network infrastructure', text: 'Consulting and delivery of a complete replacement of the Terumo BCT plant network infrastructure.' },
     { tag: 'Enterprise', title: 'Network & system infrastructure for a new office', text: 'Consulting and delivery of the entire network and system infrastructure for Atlas\u2019s new office.' },
-    { tag: 'Air cargo services', title: 'Critical operations system upgrade', text: 'Upgrade of the critical operations systems of SCSC, an air cargo services company operating at the airport.' },
+    { tag: 'Air cargo', title: 'Critical operations system upgrade', text: 'Upgrade of the critical operations systems of SCSC, an air cargo services company operating at the airport.' },
+    { tag: 'Retail', title: 'Network infrastructure for a warehouse and stores', text: 'Network infrastructure deployment for the Decathlon warehouse in Binh Duong and several stores in Ho Chi Minh City (District 2, District 10, Binh Thanh).' },
   ],
   projectsPage: {
     eyebrow: 'Projects & Clients', title: 'Proven delivery, trusted by leading organizations', sub: 'From manufacturing plants and aviation services to finance, healthcare and consulting, NAK partners with international and local organizations.',

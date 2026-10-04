@@ -82,6 +82,34 @@ module.exports = {
         results: ['The critical operations systems were upgraded', 'Systems were tested and accepted before going into operation', 'Configuration and operations documentation was handed over'],
       },
     },
+    3: {
+      vi: {
+        challenge: 'Kho và cửa hàng bán lẻ có yêu cầu hạ tầng mạng khác nhau: kho cần kết nối ổn định trên diện tích lớn cho hoạt động nhập xuất hàng, còn cửa hàng cần mạng tin cậy cho bán hàng và vận hành hằng ngày. Triển khai tại nhiều địa điểm đòi hỏi thiết kế thống nhất để dễ quản lý, dễ nhân rộng và đưa vào hoạt động đúng tiến độ.',
+        solution: 'NAK triển khai hạ tầng network cho kho Decathlon tại Bình Dương và cho một số cửa hàng tại TP. Hồ Chí Minh (Quận 2, Quận 10, Bình Thạnh), theo mô hình thiết kế thống nhất giữa các địa điểm.',
+        locations: ['Kho tại Bình Dương', 'Cửa hàng Quận 2', 'Cửa hàng Quận 10', 'Cửa hàng Bình Thạnh'],
+        scope: ['Khảo sát mặt bằng kho và từng cửa hàng', 'Thiết kế hạ tầng network phù hợp đặc thù kho và cửa hàng bán lẻ', 'Cung cấp, lắp đặt và cấu hình thiết bị mạng tại từng địa điểm', 'Kiểm thử và nghiệm thu từng địa điểm', 'Bàn giao tài liệu và hỗ trợ sau triển khai'],
+        phases: [
+          { t: 'Khảo sát', d: 'Đánh giá mặt bằng và nhu cầu kết nối của kho và từng cửa hàng.' },
+          { t: 'Thiết kế', d: 'Xây dựng thiết kế mạng thống nhất cho kho và cửa hàng, kèm kế hoạch triển khai.' },
+          { t: 'Triển khai', d: 'Lắp đặt và cấu hình tại kho Bình Dương và các cửa hàng Quận 2, Quận 10, Bình Thạnh.' },
+          { t: 'Bàn giao', d: 'Kiểm thử, nghiệm thu từng địa điểm và bàn giao tài liệu.' },
+        ],
+        results: ['Hạ tầng network được triển khai cho kho tại Bình Dương', 'Hạ tầng network được triển khai cho các cửa hàng tại Quận 2, Quận 10 và Bình Thạnh', 'Tài liệu cấu hình và vận hành được bàn giao'],
+      },
+      en: {
+        challenge: 'A warehouse and retail stores have different network needs: the warehouse needs stable connectivity across a large area for inbound and outbound operations, while stores need a dependable network for sales and day-to-day operations. Delivering across several sites calls for a consistent design that is easy to manage, easy to replicate and ready on schedule.',
+        solution: 'NAK delivered the network infrastructure for the Decathlon warehouse in Binh Duong and for several stores in Ho Chi Minh City (District 2, District 10, Binh Thanh), following a consistent design across sites.',
+        locations: ['Warehouse in Binh Duong', 'District 2 store', 'District 10 store', 'Binh Thanh store'],
+        scope: ['Survey of the warehouse and each store', 'Network design suited to a warehouse and retail stores', 'Supply, installation and configuration of network equipment at each site', 'Testing and acceptance site by site', 'Documentation handover and post-deployment support'],
+        phases: [
+          { t: 'Discover', d: 'Assess the floor plan and connectivity needs of the warehouse and each store.' },
+          { t: 'Design', d: 'Build a consistent network design for the warehouse and stores, with a rollout plan.' },
+          { t: 'Deliver', d: 'Install and configure at the Binh Duong warehouse and the District 2, District 10 and Binh Thanh stores.' },
+          { t: 'Handover', d: 'Test, accept each site and hand over documentation.' },
+        ],
+        results: ['Network infrastructure was delivered for the warehouse in Binh Duong', 'Network infrastructure was delivered for the stores in District 2, District 10 and Binh Thanh', 'Configuration and operations documentation was handed over'],
+      },
+    },
   },
 
   // Customer quotes (only with the customer's written consent).

@@ -25,7 +25,7 @@
       <% } %>
       <div class="related">
         <span><%= t.x.relatedSolution %></span>
-        <a class="chip" href="/<%= lang %>/solutions/<%= post.solution %>"><%- icon(content.solutions.find(function (s) { return s.id === post.solution; }).icon, 18) %><%= content.solutions.find(function (s) { return s.id === post.solution; })[lang].title %></a>
+        <a class="chip" href="/<%= lang %>/solutions/<%= post.solution %>"><%- proIcon(post.solution, 24) %><%= content.solutions.find(function (s) { return s.id === post.solution; })[lang].title %></a>
       </div>
     </article>
   </div>

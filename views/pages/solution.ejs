@@ -5,7 +5,7 @@
   <div class="orb orb-a" aria-hidden="true"></div>
   <div class="container">
     <nav class="crumbs hero-in" aria-label="Breadcrumb"><a href="/<%= lang %>/solutions"><%= t.nav.solutions %></a><span aria-hidden="true">/</span><span><%= c.title %></span></nav>
-    <div class="sol-hero-icon hero-in"><%- icon(sol.icon, 34) %></div>
+    <div class="sol-hero-icon hero-in"><%- proIcon(sol.id, 46) %></div>
     <h1 class="hero-in"><%= c.title %></h1>
     <p class="lead hero-in"><%= c.tagline %></p>
   </div>
@@ -77,7 +77,7 @@
     <div class="section-head reveal"><h2><%= t.x.otherSolutions %></h2></div>
     <div class="chips">
       <% content.solutions.forEach(function (s) { if (s.id === sol.id) return; %>
-      <a class="chip" href="/<%= lang %>/solutions/<%= s.id %>"><%- icon(s.icon, 18) %><%= s[lang].title %></a>
+      <a class="chip" href="/<%= lang %>/solutions/<%= s.id %>"><%- proIcon(s.id, 24) %><%= s[lang].title %></a>
       <% }) %>
     </div>
   </div>

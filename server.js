@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 
 const cfg = require('./src/config');
 const { icon } = require('./src/icons');
+const { proIcon } = require('./src/icons-pro');
 const data = require('./src/data');
 const dict = { vi: require('./src/i18n/vi'), en: require('./src/i18n/en') };
 const privacy = require('./src/privacy');
@@ -71,6 +72,7 @@ app.use(
 app.use((req, res, next) => {
   res.locals.cfg = cfg;
   res.locals.icon = icon;
+  res.locals.proIcon = proIcon;
   res.locals.data = data;
   res.locals.content = { solutions, posts, faq, extras };
   next();

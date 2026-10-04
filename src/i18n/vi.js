@@ -75,7 +75,8 @@ module.exports = {
   projects: [
     { tag: 'Sản xuất', title: 'Thay thế toàn bộ hạ tầng mạng nhà máy', text: 'Tư vấn và triển khai thay thế toàn bộ hạ tầng network của nhà máy Terumo BCT.' },
     { tag: 'Doanh nghiệp', title: 'Hạ tầng network & system cho văn phòng mới', text: 'Tư vấn và triển khai toàn bộ hạ tầng network và system cho văn phòng mới của Atlas.' },
-    { tag: 'Dịch vụ hàng hóa hàng không', title: 'Nâng cấp hệ thống vận hành trọng yếu', text: 'Nâng cấp hệ thống phục vụ vận hành trọng yếu cho SCSC, công ty cổ phần dịch vụ hàng hóa tại cảng hàng không.' },
+    { tag: 'Hàng hóa hàng không', title: 'Nâng cấp hệ thống vận hành trọng yếu', text: 'Nâng cấp hệ thống phục vụ vận hành trọng yếu cho SCSC, công ty cổ phần dịch vụ hàng hóa tại cảng hàng không.' },
+    { tag: 'Bán lẻ', title: 'Hạ tầng network cho kho và cửa hàng', text: 'Triển khai hạ tầng network cho kho tại Bình Dương và một số cửa hàng Decathlon tại TP. Hồ Chí Minh (Quận 2, Quận 10, Bình Thạnh).' },
   ],
   projectsPage: {
     eyebrow: 'Dự án & Khách hàng', title: 'Kinh nghiệm triển khai thực tế, được nhiều tổ chức tin tưởng', sub: 'Từ nhà máy sản xuất, dịch vụ hàng không đến tài chính, y tế và tư vấn, NAK đồng hành cùng các tổ chức quốc tế và trong nước.',

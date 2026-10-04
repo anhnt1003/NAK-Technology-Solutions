@@ -511,3 +511,13 @@ a.project { display: block; color: inherit; }
 .brand img { filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35)); }
 @media (max-width: 640px) { .brand img { height: 36px; } }
 .site-header .brand img { height: 46px; } @media (max-width: 640px) { .site-header .brand img { height: 38px; } }
+
+/* pro icons */
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.pro-icon { display: block; overflow: visible; transition: transform 0.35s var(--ease); }
+.card:hover .pro-icon, .sol:hover .pro-icon, .chip:hover .pro-icon { transform: translateY(-2px) scale(1.08); }
+.card-icon .pro-icon { filter: drop-shadow(0 4px 10px rgba(255, 122, 61, 0.28)); }
+.sol-hero-icon { width: 80px; height: 80px; border-radius: 22px; }
+.chip .pro-icon { filter: none; }
+.ha-node-icon .pro-icon { filter: drop-shadow(0 3px 8px rgba(255, 122, 61, 0.35)); }
+.card-icon { box-shadow: inset 0 0 0 1px rgba(255, 160, 110, 0.12), 0 8px 24px -12px rgba(255, 122, 61, 0.45); }

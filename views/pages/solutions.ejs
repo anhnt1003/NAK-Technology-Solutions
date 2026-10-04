@@ -15,7 +15,7 @@
     <% content.solutions.forEach(function (s, i) { var c = s[lang]; %>
     <article class="sol reveal" id="<%= s.id %>" style="--d:<%= (i % 2) * 80 %>ms">
       <div class="sol-head">
-        <div class="card-icon"><%- icon(s.icon, 28) %></div>
+        <div class="card-icon"><%- proIcon(s.id, 38) %></div>
         <div>
           <span class="sol-num"><%= String(i + 1).padStart(2, '0') %></span>
           <h2><a href="/<%= lang %>/solutions/<%= s.id %>"><%= c.title %></a></h2>

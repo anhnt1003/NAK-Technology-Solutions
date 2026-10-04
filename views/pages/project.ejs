@@ -23,6 +23,7 @@
       <dl class="facts-list">
         <dt><%= t.x.projectClient %></dt><dd><img class="inline-logo" src="/img/partners/<%= media.client[1] %>.png" alt="<%= media.client[0] %>"></dd>
         <dt><%= t.x.projectIndustry %></dt><dd><%= p.tag %></dd>
+        <% if (d.locations && d.locations.length) { %><dt><%= t.x.projectLocations %></dt><dd><%= d.locations.join(' · ') %></dd><% } %>
         <% if (d.duration) { %><dt><%= t.x.projectDuration %></dt><dd><%= d.duration %></dd><% } %>
         <% if (d.tech && d.tech.length) { %><dt><%= t.x.projectTech %></dt><dd><%= d.tech.join(', ') %></dd><% } %>
       </dl>
