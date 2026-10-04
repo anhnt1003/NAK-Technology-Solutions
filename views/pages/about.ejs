@@ -13,7 +13,7 @@
 <section class="section">
   <div class="container split">
     <div class="split-text reveal">
-      <p class="sub"><%= t.about.story %></p>
+      <% t.about.story.forEach(function (p) { %><p class="sub"><%= p %></p><% }) %>
       <div class="facts">
         <% t.about.facts.forEach(function (f) { %><div><strong class="grad"><%= f.value %></strong><span><%= f.label %></span></div><% }) %>
       </div>
@@ -33,6 +33,21 @@
 
 <section class="section">
   <div class="container">
+    <div class="section-head reveal"><h2><%= t.about.pillarsHead %></h2></div>
+    <div class="card-grid four">
+      <% t.about.pillars.forEach(function (w, i) { %>
+      <div class="card reveal" style="--d:<%= i * 80 %>ms">
+        <div class="card-icon sm"><%- icon(w.icon, 24) %></div>
+        <h3><%= w.title %></h3>
+        <p><%= w.text %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
     <div class="section-head reveal"><h2><%= t.about.deliveryHead %></h2></div>
     <ol class="steps six">
       <% t.delivery.forEach(function (p, i) { %>
@@ -47,23 +62,20 @@
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section">
   <div class="container">
-    <div class="section-head reveal"><h2><%= t.about.whyHead %></h2></div>
-    <div class="card-grid four">
-      <% t.why.forEach(function (w, i) { %>
-      <div class="card reveal" style="--d:<%= i * 80 %>ms">
-        <div class="card-icon sm"><%- icon(w.icon, 24) %></div>
-        <h3><%= w.title %></h3>
-        <p><%= w.text %></p>
-      </div>
-      <% }) %>
+    <div class="section-head reveal">
+      <h2><%= t.about.clientsHead %></h2>
+      <p class="sub"><%= t.about.clientsText %></p>
     </div>
   </div>
+  <%- include('../partials/marquee', { items: data.clients.slice(0, 6), rev: false }) %>
+  <%- include('../partials/marquee', { items: data.clients.slice(6), rev: true }) %>
+  <div class="container"><p class="center-link reveal"><a class="link-arrow" href="/<%= lang %>/projects"><%= t.about.clientsLink %> <%- icon('arrow', 18) %></a></p></div>
 </section>
 
 <% if (content.extras.team.length) { %>
-<section class="section">
+<section class="section section-alt">
   <div class="container">
     <div class="section-head reveal"><h2><%= t.x.teamHead %></h2></div>
     <div class="card-grid four">

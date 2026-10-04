@@ -29,6 +29,18 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container split">
+    <div class="split-text reveal">
+      <p class="eyebrow"><%= t.x.clientSupply.eyebrow %></p>
+      <h2><%= t.x.clientSupply.title %></h2>
+      <p class="sub"><%= t.x.clientSupply.text %></p>
+      <a class="link-arrow" href="/<%= lang %>/solutions/client"><%= t.x.clientSupply.link %> <%- icon('arrow', 18) %></a>
+    </div>
+    <div class="reveal" style="--d:100ms"><%- include('../partials/logowall', { items: data.clientSupply, cls: 'duo' }) %></div>
+  </div>
+</section>
+
 <section class="section section-alt">
   <div class="container">
     <div class="section-head reveal center"><h2><%= t.projectsPage.clientsHead %></h2></div>

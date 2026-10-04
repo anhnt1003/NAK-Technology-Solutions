@@ -65,6 +65,15 @@
 </section>
 <% } %>
 
+<% if (sol.id === 'client') { %>
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal center"><p class="eyebrow"><%= t.x.clientSupply.eyebrow %></p><h2><%= t.x.clientSupply.title %></h2><p class="sub"><%= t.x.clientSupply.text %></p></div>
+    <%- include('../partials/logowall', { items: data.clientSupply, cls: 'few' }) %>
+  </div>
+</section>
+<% } %>
+
 <section class="section">
   <div class="container narrow">
     <div class="section-head reveal"><h2><%= t.x.faqHead %></h2></div>

@@ -521,3 +521,10 @@ a.project { display: block; color: inherit; }
 .chip .pro-icon { filter: none; }
 .ha-node-icon .pro-icon { filter: drop-shadow(0 3px 8px rgba(255, 122, 61, 0.35)); }
 .card-icon { box-shadow: inset 0 0 0 1px rgba(255, 160, 110, 0.12), 0 8px 24px -12px rgba(255, 122, 61, 0.45); }
+
+.logo-wall.duo { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 640px) { .logo-wall.duo { grid-template-columns: repeat(2, 1fr); } }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 20px; }
+.facts strong { font-size: clamp(1.8rem, 3.2vw, 2.3rem); }
+.facts span { font-size: 13px; line-height: 1.35; }
+@media (max-width: 480px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
