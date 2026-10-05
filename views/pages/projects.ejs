@@ -48,7 +48,7 @@
     <h3 class="mini center-text"><%= t.home.industriesHead.title %></h3>
     <ul class="industries">
       <% t.industries.forEach(function (ind, i) { %>
-      <li class="industry reveal" style="--d:<%= i * 70 %>ms"><span class="card-icon sm"><%- icon(data.industryIcons[i], 24) %></span><span><%= ind.title %></span></li>
+      <li class="industry reveal" style="--d:<%= i * 70 %>ms"><span class="card-icon sm"><%- proIcon(data.industryIcons[i], 32) %></span><span><%= ind.title %></span></li>
       <% }) %>
     </ul>
   </div>

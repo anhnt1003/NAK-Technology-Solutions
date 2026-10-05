@@ -1,7 +1,7 @@
 <div class="lw-marquee <%= typeof rev !== 'undefined' && rev ? 'rev' : '' %>">
   <ul class="lw-track">
     <% items.concat(items).forEach(function (it, i) { %>
-    <li<%- i >= items.length ? ' aria-hidden="true"' : '' %>><img src="/img/partners/<%= it[1] %>.png" alt="<%= i >= items.length ? '' : it[0] %>" loading="lazy"></li>
+    <li<%- i >= items.length ? ' aria-hidden="true"' : '' %>><img src="/img/partners/<%= it[1] %>.<%= it[2] || 'png' %>" alt="<%= i >= items.length ? '' : it[0] %>" loading="lazy"></li>
     <% }) %>
   </ul>
 </div>

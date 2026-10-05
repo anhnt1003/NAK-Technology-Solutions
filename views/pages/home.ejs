@@ -70,7 +70,7 @@
       <% t.delivery.forEach(function (p, i) { %>
       <li class="step reveal" style="--d:<%= i * 70 %>ms">
         <span class="step-num"><%= String(i + 1).padStart(2, '0') %></span>
-        <div class="card-icon sm"><%- icon(p.icon, 24) %></div>
+        <div class="card-icon sm"><%- proIcon(data.deliveryIcons[i], 32) %></div>
         <h3><%= p.title %></h3>
         <p><%= p.text %></p>
       </li>
@@ -87,7 +87,7 @@
     </div>
     <ul class="industries">
       <% t.industries.forEach(function (ind, i) { %>
-      <li class="industry reveal" style="--d:<%= i * 70 %>ms"><span class="card-icon sm"><%- icon(data.industryIcons[i], 24) %></span><span><%= ind.title %></span></li>
+      <li class="industry reveal" style="--d:<%= i * 70 %>ms"><span class="card-icon sm"><%- proIcon(data.industryIcons[i], 32) %></span><span><%= ind.title %></span></li>
       <% }) %>
     </ul>
   </div>
